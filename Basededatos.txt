@@ -1,8 +1,8 @@
 
-CREATE TABLE persona(cedula INT(3) UNSIGNED NOT NULL PRIMARY KEY  , nombre VARCHAR(40) NOT NULL, direccion VARCHAR(40) ,telefono VARCHAR(40))ENGINE = InnoDB;
+CREATE TABLE administrador(cedula INT(3) UNSIGNED NOT NULL PRIMARY KEY  , nombre VARCHAR(40) NOT NULL, direccion VARCHAR(40) ,telefono VARCHAR(40))ENGINE = InnoDB;
 
 
-CREATE TABLE empresa(nit INT(3) UNSIGNED  NOT NULL PRIMARY KEY,nombre VARCHAR(40) NOT NULL, direccion VARCHAR(40) NOT NULL,pagina_web VARCHAR(40))ENGINE = InnoDB;
+CREATE TABLE profesor(nit INT(3) UNSIGNED  NOT NULL PRIMARY KEY,nombre VARCHAR(40) NOT NULL, direccion VARCHAR(40) NOT NULL,pagina_web VARCHAR(40))ENGINE = InnoDB;
 
 CREATE TABLE factura(codigo INT NOT NULL PRIMARY KEY,fecha DATE NOT NULL, valor VARCHAR(40),
 fecha_retorno DATE,
@@ -13,7 +13,7 @@ nit_E INT(3) UNSIGNED,
 FOREIGN KEY fk_e(nit_e) REFERENCES empresa(nit) ON DELETE CASCADE
 )
 ENGINE = InnoDB;
-hjhjvjk
+
 INSERT INTO `empresa`(`nit`, `nombre`, `direccion`, `pagina_web`) VALUES (1,'postobon','CR-1 Cl-2 ','www.postobon.com');
 INSERT INTO `empresa`(`nit`, `nombre`, `direccion`, `pagina_web`) VALUES (2,'cocacola','CR-2 cl-3','www.cocacola.com');
 
