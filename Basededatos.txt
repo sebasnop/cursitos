@@ -3,7 +3,7 @@ CREATE TABLE administrador
     clave VARCHAR(40) NOT NULL,
     nombre_completo VARCHAR(50) NOT NULL,
     correo VARCHAR(320) NOT NULL UNIQUE,
-    hoja_de_vida VARCHAR(1000) NOT NULL UNIQUE
+    hoja_de_vida VARCHAR(500) NOT NULL UNIQUE
     )ENGINE = InnoDB ROW_FORMAT=DYNAMIC;
 
 CREATE TABLE profesor
@@ -11,11 +11,11 @@ CREATE TABLE profesor
     clave VARCHAR(40) NOT NULL,
     nombre_completo VARCHAR(50) NOT NULL,
     correo VARCHAR(320) NOT NULL UNIQUE,
-    hoja_de_vida VARCHAR(1000) NOT NULL UNIQUE,
+    hoja_de_vida VARCHAR(500) NOT NULL UNIQUE,
     admin_supervisor VARCHAR(40),
     UNIQUE(admin_supervisor),
     FOREIGN KEY fk_admin(admin_supervisor) REFERENCES administrador(nombre_usuario)  ON DELETE CASCADE
-    )ENGINE = InnoDB ROW_FORMAT=DYNAMIC ROW_FORMAT=DYNAMIC;
+    )ENGINE = InnoDB ROW_FORMAT=DYNAMIC;
 
 
 CREATE TABLE curso
