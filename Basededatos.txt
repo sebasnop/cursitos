@@ -1,4 +1,3 @@
-
 CREATE TABLE administrador
     (nombre_usuario VARCHAR(40) PRIMARY KEY,
     clave VARCHAR(40) NOT NULL,
