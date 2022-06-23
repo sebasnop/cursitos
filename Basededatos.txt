@@ -14,6 +14,7 @@ CREATE TABLE profesor
     correo VARCHAR(320) NOT NULL UNIQUE,
     hoja_de_vida VARCHAR(1000) NOT NULL UNIQUE,
     admin_supervisor VARCHAR(40),
+    UNIQUE(admin_supervisor),
     FOREIGN KEY fk_admin(admin_supervisor) REFERENCES administrador(nombre_usuario)  ON DELETE CASCADE
     )ENGINE = InnoDB ROW_FORMAT=DYNAMIC ROW_FORMAT=DYNAMIC;
 
@@ -24,32 +25,22 @@ CREATE TABLE curso
     categoria VARCHAR(50) NOT NULL,
     descripcion VARCHAR(4000) NOT NULL,
     cantidad_estudiantes INT(4) NOT NULL CHECK (cantidad_estudiantes>=0),
-    fecha_publicacion DATE NOT NULL CHECK (fecha_publicacion>= DATE '2022-01-01'),
+    fecha_publicacion DATE NOT NULL CHECK (fecha_publicacion>= DATE('2022-01-01')),
     tipo VARCHAR(11) NOT NULL CHECK (tipo IN ('ASINCRONICO', 'SINCRONICO')),
     profesor_ensenia VARCHAR(40),
     admin_supervisa VARCHAR(40),
     FOREIGN KEY fk_profesor(profesor_ensenia) REFERENCES profesor(nombre_usuario)  ON DELETE CASCADE,
     FOREIGN KEY fk_admin(admin_supervisa) REFERENCES administrador(nombre_usuario)  ON DELETE CASCADE,
 
-    cupos_disponibles INT(4) NOT NULL CHECK (cupos_disponibles>=0),
-    fecha_fin DATE NOT NULL CHECK (fecha_fin>=fecha_publicacion),
+    cupos_disponibles INT(4) CHECK (cupos_disponibles>=0),
+    fecha_fin DATE CHECK (fecha_fin>=fecha_publicacion),
 
-    duracion_estimada INT(2) NOT NULL CHECK (duracion_estimada>=0)
+    duracion_estimada INT(2) CHECK (duracion_estimada>=0),
 
-    #CONSTRAINT chk_sub CHECK ((tipo='SINCRONICO' AND cupos_disponibles IS NOT NULL AND fecha_fin IS NOT NULL AND duracion_estimada IS NULL)
-    #OR (tipo='ASINCRONICO' AND  duracion_estimada IS NOT NULL AND cupos_disponibles IS NULL AND fecha_fin IS NULL))
+    CHECK ((tipo='SINCRONICO' AND cupos_disponibles IS NOT NULL AND fecha_fin IS NOT NULL AND duracion_estimada IS NULL)
+    OR (tipo='ASINCRONICO' AND  duracion_estimada IS NOT NULL AND cupos_disponibles IS NULL AND fecha_fin IS NULL))
     )ENGINE = InnoDB ROW_FORMAT=DYNAMIC;
 
-
-
-INSERT INTO `empresa`(`nit`, `nombre`, `direccion`, `pagina_web`) VALUES (1,'postobon','CR-1 Cl-2 ','www.postobon.com');
-INSERT INTO `empresa`(`nit`, `nombre`, `direccion`, `pagina_web`) VALUES (2,'cocacola','CR-2 cl-3','www.cocacola.com');
-
-INSERT INTO `persona`(`cedula`, `nombre`, `DIRECCION`, `telefono`) VALUES (1,'Jota Mario Valencia','Cielo','302456789');
-INSERT INTO `persona`(`cedula`, `nombre`, `DIRECCION`, `telefono`) VALUES (2,'Marbelle Ramirez','Buenaventura','302356789');
-
-INSERT INTO `factura`(`codigo`, `fecha`, `valor`, `fecha_retorno`, `tipo`, `cedula_p`) VALUES (1,DATE('2010-01-01'),500,DATE('2010-02-01'),'P',1);
-INSERT INTO `factura`(`codigo`, `fecha`, `valor`, `fecha_retorno`, `tipo`, `cedula_p`) VALUES (2,DATE('2012-05-01'),500,DATE('2016-02-01'),'P',2);
-
-INSERT INTO `factura`(`codigo`, `fecha`, `valor`, `tipo`, `nit_e`) VALUES (3,DATE('2010-01-01'),50000,'C',1);
-INSERT INTO `factura`(`codigo`, `fecha`, `valor`, `tipo`, `nit_e`) VALUES (4,DATE('2012-05-01'),50000,'C',2);
+INSERT INTO administrador VALUES ('admin1','claveadmin1','admin1 perez','admin1@cursitos.com','www.hojadevida.com/admin1');
+INSERT INTO profesor VALUES ('profe1','claveprofe1','profe perez','profe1@cursitos.com','www.hojadevida.com/profe1','admin1');
+INSERT INTO curso VALUES (000001,'php','web','muy bueno',10,DATE('2022-02-02'),'SINCRONICO','profe1','admin1',2,DATE('2023-01-01'), NULL)
