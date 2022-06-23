@@ -13,8 +13,7 @@ nit_E INT(3) UNSIGNED,
 FOREIGN KEY fk_e(nit_e) REFERENCES empresa(nit) ON DELETE CASCADE
 )
 ENGINE = InnoDB;
-
-
+hjhjvjk
 INSERT INTO `empresa`(`nit`, `nombre`, `direccion`, `pagina_web`) VALUES (1,'postobon','CR-1 Cl-2 ','www.postobon.com');
 INSERT INTO `empresa`(`nit`, `nombre`, `direccion`, `pagina_web`) VALUES (2,'cocacola','CR-2 cl-3','www.cocacola.com');
 
