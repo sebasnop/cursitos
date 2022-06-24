@@ -17,7 +17,7 @@
         admin_supervisor VARCHAR(40),
         UNIQUE(admin_supervisor),
         FOREIGN KEY fk_admin(admin_supervisor) REFERENCES administrador(nombre_usuario)  ON DELETE CASCADE
-        )ENGINE = InnoDB ROW_FORMAT=DYNAMIC ROW_FORMAT=DYNAMIC;
+        )ENGINE = InnoDB ROW_FORMAT=DYNAMIC;
 
 
     CREATE TABLE curso
@@ -47,4 +47,3 @@
     INSERT INTO profesor VALUES ('profe1','claveprofe1','profe perez','profe1@cursitos.com','www.hojadevida.com/profe1','admin1');
     INSERT INTO curso VALUES (000001,'php','web','muy bueno',10,DATE('2022-02-02'),'SINCRONICO','profe1','admin1',2,DATE('2023-01-01'), NULL)
 
-    
