@@ -4,7 +4,8 @@
         clave VARCHAR(40) NOT NULL,
         nombre_completo VARCHAR(50) NOT NULL,
         correo VARCHAR(320) NOT NULL UNIQUE,
-        hoja_de_vida VARCHAR(500) NOT NULL UNIQUE
+        hoja_de_vida VARCHAR(500) NOT NULL UNIQUE,
+        capacidad INT(6) NOT NULL CHECK (capacidad>=0)
         )ENGINE = InnoDB ROW_FORMAT=DYNAMIC;
 
     CREATE TABLE profesor
@@ -42,7 +43,7 @@
         OR (tipo='ASINCRONICO' AND  duracion_estimada IS NOT NULL AND cupos_disponibles IS NULL AND fecha_fin IS NULL))
         )ENGINE = InnoDB ROW_FORMAT=DYNAMIC;
 
-    INSERT INTO administrador VALUES ('admin1','claveadmin1','admin1 perez','admin1@cursitos.com','www.hojadevida.com/admin1');
+    INSERT INTO administrador VALUES ('admin1','claveadmin1','admin1 perez','admin1@cursitos.com','www.hojadevida.com/admin1', 1234);
     INSERT INTO profesor VALUES ('profe1','claveprofe1','profe perez','profe1@cursitos.com','www.hojadevida.com/profe1','admin1');
     INSERT INTO curso VALUES (000001,'php','web','muy bueno',10,DATE('2022-02-02'),'SINCRONICO','profe1','admin1',2,DATE('2023-01-01'), NULL)
 
