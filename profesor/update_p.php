@@ -4,16 +4,16 @@
 require('../configuraciones/conexion.php');
 
 //query
-$query="UPDATE persona SET nombre='$_POST[nombre]',direccion='$_POST[direccion]',telefono='$_POST[telefono]' WHERE cedula='$_POST[cedula]'";
+$query="UPDATE profesor SET clave='$_POST[clave]',nombre_completo='$_POST[nombre_completo]',correo='$_POST[correo]',hoja_de_vida='$_POST[hoja_de_vida]',admin_supervisor='$_POST[admin_supervisor]' WHERE nombre_usuario='$_POST[nombre_usuario]'";
 $result = mysqli_query($conn, $query) or 
 die(mysqli_error($conn));
  
 if($result){
-    header ("Location: personas.php");
+    header ("Location: profesor.php");
     
      
  }else{
-     echo "Ha ocurrido un error al Eliminar  la persona";
+     echo "Ha ocurrido un error al Eliminar el Profesor";
  }
  
 mysqli_close($conn);

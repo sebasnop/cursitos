@@ -3,27 +3,20 @@
 // Create connection
 require('../configuraciones/conexion.php');
 
-$cedula = $_POST["cedula"];
+$nombre_usuario = $_POST["nombre_usuario"];
 
 //query
-if($cedula<0){
-	echo "cedula debe ser positiva";
-}
-
-else{
-	$query="INSERT INTO `persona`(`cedula`,`nombre`, `direccion`, `telefono`)
- 	VALUES ('$_POST[cedula]','$_POST[name]','$_POST[direccion]','$_POST[telefono]')";
+	$query="INSERT INTO `profesor`(`nombre_usuario`,`clave`,`nombre_completo`, `correo`, `hoja_de_vida`,`admin_supervisor`)
+ 	VALUES ('$_POST[nombre_usuario]','$_POST[clave]','$_POST[nombre_completo]','$_POST[correo]','$_POST[hoja_de_vida]','$_POST[admin_supervisor]')";
 	$result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 
  	if($result){
-        header ("Location: personas.php");
-        
+        header ("Location: profesor.php");
          
  	}else{
- 		echo "Ha ocurrido un error al crear la persona";
+ 		echo "Ha ocurrido un error al crear el Profesor";
  	}
 
 
-}
 
 ?>

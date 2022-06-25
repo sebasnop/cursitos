@@ -27,21 +27,24 @@
         <li class="nav nav-item">
             <a class="nav-link " href="../index.html">Inicio</a>
         </li>
-        <li class="nav nav-pills">
-            <a class="nav-link active" href="../administrador/administrador.php">Administrador</a>
+        <li class="nav ">
+            <a class="nav-link " href="../administrador/administrador.php">Administrador</a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="../profesor/profesor.php">Profesor</a>
+        <li class="nav-item nav-pills">
+            <a class="nav-link active"  href="../profesor/profesor.php">Profesor</a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" href="../curso/curso.php">Curso</a>
-        </li>        
-        
+        </li>
+
         <li class="nav ">
             <a class="nav-link " href="../busquedas/busquedas.php">Busquedas</a>
         </li>
+
+
+
     </ul>
     <div class="container mt-3">
         <div class="row">
@@ -51,13 +54,13 @@
             <div class="col-6 px-2">
                 <div class="card">
                     <div class="card-header">
-                        Editar Administrador
+                        Editar Profesor
                     </div>
                     <div class="card-body">
                         <!--formulario para insertar una persona mediante el metodo post-->
-                        <form action="update_a.php" class="form-group" method="post">
+                        <form action="update_p.php" class="form-group" method="post">
                             <div class="form-group">
-                                <label for="nombre_usuario">Nombre de usuario</label>
+                                <label for="nombre_usuario">Usuario</label>
                                 <input type="text" readonly name="nombre_usuario" value=<?=$_GET["nombre_usuario"];?> id="nombre_usuario"
                                     class="form-control">
                             </div>
@@ -78,12 +81,12 @@
                                 <input type="text" name="hoja_de_vida" value=<?=$_GET["hoja_de_vida"];?> id="hoja_de_vida" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="">Capacidad de actividades</label>
-                                <input type="text" name="capacidad" value=<?=$_GET["capacidad"];?> id="capacidad" class="form-control">
+                                <label for="">Supervisor</label>
+                                <input type="text" name="admin_supervisor" value=<?=$_GET["admin_supervisor"];?> id="admin_supervisor" class="form-control">
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="Guardar">
-                                <a href="administrador.php" class="btn btn-danger">Descartar</a>
+                                <a href="profesor.php" class="btn btn-danger">Descartar</a>
                                 
                             </div>
                         </form>
@@ -98,11 +101,11 @@
             <div class="col-6 px-2">
                 <div class="card">
                     <div class="card-header">
-                        Insertar Administrador
+                        Insertar Profesor
                         </div>
                 <div class="card-body">
                     <!--formulario para insertar una persona mediante el metodo post-->
-                    <form action="insert_a.php" class="form-group" method="post">
+                    <form action="insert_p.php" class="form-group" method="post">
                         <div class="form-group">
                             <label for="nombre_usuario">Usuario</label>
                             <input type="text" name="nombre_usuario" id="nombre_usuario" class="form-control">
@@ -124,12 +127,12 @@
                             <input type="text" name="hoja_de_vida" id="hoja_de_vida" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="">Capacidad de actividades</label>
-                            <input type="text" name="capacidad" id="capacidad" class="form-control">
+                            <label for="">Supervisor</label>
+                            <input type="text" name="admin_supervisor" id="admin_supervisor" class="form-control">
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="Insertar">
-                            <a href="administrador.php" class="btn btn-success">Reiniciar</a>
+                            <a href="profesor.php" class="btn btn-success">Reiniciar</a>
                             </div>
                             
 
@@ -153,14 +156,14 @@
 
                             <th scope="col">Correo</th>
                             <th scope="col">Hoja de vida</th>
-                            <th scope="col">Capacidad de actividades</th>
+                            <th scope="col">Supervisor</th>
                             <th scope="col">Opciones</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php 
-                        require('select_a.php');
+                        require('select_p.php');
                         if($result){
                             foreach ($result as $fila){
                         ?>
@@ -171,11 +174,11 @@
 
                             <td><?=$fila['correo'];?></td>
                             <td><?=$fila['hoja_de_vida'];?></td>
-                            <td><?=$fila['capacidad'];?></td>
+                            <td><?=$fila['admin_supervisor'];?></td>
 
                             <td>
 
-                                <form action="delete_a.php" method="POST">
+                                <form action="delete_p.php" method="POST">
                                     <input type="text" value=<?=$fila['nombre_usuario'];?> hidden>
                                     <input type="text" name="d" value=<?=$fila['nombre_usuario'];?> hidden>
                                     <button class="btn btn-danger" title="eliminar" type="submit"><i
@@ -183,7 +186,7 @@
                                 </form>
                             </td>
                             <td class="mx-0 pr-2">
-                                <form action="administrador.php" method="GET">
+                                <form action="profesor.php" method="GET">
                                     
                                     <input type="text" name="nombre_usuario" value=<?=$fila['nombre_usuario'];?> hidden>
                                     <input type="text" name="clave" value='<?=$fila['clave'];?>' hidden>
@@ -191,7 +194,7 @@
 
                                     <input type="text" name="correo" value='<?=$fila['correo'];?>' hidden>
                                     <input type="text" name="hoja_de_vida" value=<?=$fila['hoja_de_vida'];?> hidden>
-                                    <input type="text" name="capacidad" value=<?=$fila['capacidad'];?> hidden>
+                                    <input type="text" name="admin_supervisor" value=<?=$fila['admin_supervisor'];?> hidden>
 
                                     <button class="btn btn-primary" title="editar" type="submit"><i
                                             class="far fa-edit"></i></button>

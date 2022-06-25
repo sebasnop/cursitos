@@ -4,16 +4,16 @@
 require('../configuraciones/conexion.php');
 
 //query
-$query="delete FROM profesor where nombre_usuario='$_POST[d]'";
+$query="delete FROM administrador where nombre_usuario='$_POST[d]'";
 $result = mysqli_query($conn, $query) or 
 die(mysqli_error($conn));
  
 if($result){
-    header ("Location: profesor.php");
+    header ("Location: administrador.php");
     
      
  }else{
-     echo "Ha ocurrido un error al Eliminar el Profesor";
+     echo "Ha ocurrido un error al Eliminar el administrador";
  }
  
 mysqli_close($conn);
