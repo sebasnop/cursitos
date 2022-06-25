@@ -57,7 +57,6 @@
                         Editar Curso
                     </div>
                     <div class="card-body">
-                        <!--formulario para insertar una persona mediante el metodo post-->
                         <form action="update_c.php" class="form-group" method="post">
                             <div class="form-group">
                                 <label for="codigo">Codigo</label>
@@ -256,7 +255,7 @@
                                     <input type="text" name="tipo" value='<?=$fila['tipo'];?>' hidden>
                                     <input type="text" name="profesor_ensenia" value='<?=$fila['profesor_ensenia'];?>' hidden>
                                     <input type="text" name="admin_supervisa" value='<?=$fila['admin_supervisa'];?>' hidden>
-                                    <input type="text" name="cupos_disponibles" value=<?=$fila['cupos_disponibles'];?>' hidden>
+                                    <input type="text" name="cupos_disponibles" value='<?=$fila['cupos_disponibles'];?>' hidden>
                                     <input type="date" name="fecha_fin" value='<?=$fila['fecha_fin'];?>' hidden>
                                     <input type="text" name="duracion_estimada" value='<?=$fila['duracion_estimada'];?>' hidden>
 
