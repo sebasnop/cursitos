@@ -59,7 +59,7 @@ INSERT INTO profesor VALUES ('profe3','claveprofe3','profe vera','profe3@cursito
 INSERT INTO profesor VALUES ('profe4','claveprofe4','profe cano','profe4@cursitos.com','www.hojadevida.com/profe4','admin1');
 INSERT INTO profesor VALUES ('profe5','claveprofe4','profe velez','profe5@cursitos.com','www.hojadevida.com/profe5','admin4');
 INSERT INTO profesor VALUES ('profe6','claveprofe4','profe rios','profe5@cursitos.com','www.hojadevida.com/profe6', NULL);
-
+///////// EN PROFESOR SE DEBE ARREGLAR LO DE LOS NULL PQ LOS ESTÁ TOMANDO COMO VALORES /////////
 
 
     INSERT INTO curso VALUES (000001,'php','web','muy bueno',10,DATE('2022-02-02'),'SINCRONICO','profe1','admin1',2,DATE('2023-01-01'), NULL)
