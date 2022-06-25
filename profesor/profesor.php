@@ -61,7 +61,7 @@
                         <form action="update_p.php" class="form-group" method="post">
                             <div class="form-group">
                                 <label for="nombre_usuario">Usuario</label>
-                                <input type="text" readonly name="nombre_usuario" value=<?=$_GET["nombre_usuario"];?> id="nombre_usuario"
+                                <input type="text" readonly name="nombre_usuario" value=<?=$_GET["nombre_usuario"];?>'id="nombre_usuario"
                                     class="form-control">
                             </div>
                             <div class="form-group">
@@ -78,7 +78,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Link de hoja de vida</label>
-                                <input type="text" name="hoja_de_vida" value=<?=$_GET["hoja_de_vida"];?> id="hoja_de_vida" class="form-control">
+                                <input type="text" name="hoja_de_vida" value=<?=$_GET["hoja_de_vida"];?>'id="hoja_de_vida" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="">Supervisor</label>
@@ -88,11 +88,11 @@
                                     if($result){
                                         foreach ($result as $fila){
                                     ?>
-                                            <option value=<?=$fila['nombre_usuario'];?>  ><b>Usuario:</b> <?=$fila['nombre_usuario'];?> </option>
+                                            <option value='<?=$fila['nombre_usuario'];?>' ><b>Usuario:</b> '<?=$fila['nombre_usuario'];?>'</option>
                                     <?php
                                         }
                                     }                        
-                                    ?>                                          
+                                    ?>'                                         
                                 </select>
                         </div> 
                             <div class="form-group">
@@ -143,11 +143,11 @@
                                     if($result){
                                         foreach ($result as $fila){
                                     ?>
-                                            <option value=<?=$fila['nombre_usuario'];?>  ><b>Usuario:</b> <?=$fila['nombre_usuario'];?> </option>
+                                            <option value='<?=$fila['nombre_usuario'];?>' ><b>Usuario:</b> '<?=$fila['nombre_usuario'];?>'</option>
                                     <?php
                                         }
                                     }                        
-                                    ?>                                          
+                                    ?>'                                         
                                 </select>
                         </div>                                    
 
@@ -186,19 +186,19 @@
                             foreach ($result as $fila){
                         ?>
                         <tr>
-                            <td><?=$fila['nombre_usuario'];?></td>
-                            <td><?=$fila['clave'];?></td>
-                            <td><?=$fila['nombre_completo'];?></td>
+                            <td>'<?=$fila['nombre_usuario'];?></td>
+                            <td>'<?=$fila['clave'];?></td>
+                            <td>'<?=$fila['nombre_completo'];?></td>
 
-                            <td><?=$fila['correo'];?></td>
-                            <td><?=$fila['hoja_de_vida'];?></td>
-                            <td><?=$fila['admin_supervisor'];?></td>
+                            <td>'<?=$fila['correo'];?></td>
+                            <td>'<?=$fila['hoja_de_vida'];?></td>
+                            <td>'<?=$fila['admin_supervisor'];?></td>
 
                             <td>
 
                                 <form action="delete_p.php" method="POST">
-                                    <input type="text" value=<?=$fila['nombre_usuario'];?> hidden>
-                                    <input type="text" name="d" value=<?=$fila['nombre_usuario'];?> hidden>
+                                    <input type="text" value='<?=$fila['nombre_usuario'];?>'hidden>
+                                    <input type="text" name="d" value='<?=$fila['nombre_usuario'];?>'hidden>
                                     <button class="btn btn-danger" title="eliminar" type="submit"><i
                                             class="fas fa-trash-alt"></i></button>
                                 </form>
@@ -206,13 +206,13 @@
                             <td class="mx-0 pr-2">
                                 <form action="profesor.php" method="GET">
                                     
-                                    <input type="text" name="nombre_usuario" value=<?=$fila['nombre_usuario'];?> hidden>
-                                    <input type="text" name="clave" value='<?=$fila['clave'];?>' hidden>
-                                    <input type="text" name="nombre_completo" value='<?=$fila['nombre_completo'];?>' hidden>
+                                    <input type="text" name="nombre_usuario" value='<?=$fila['nombre_usuario'];?>'hidden>
+                                    <input type="text" name="clave"  value='$fila['clave'];?>' hidden>
+                                    <input type="text" name="nombre_completo"  value='$fila['nombre_completo'];?>' hidden>
 
-                                    <input type="text" name="correo" value='<?=$fila['correo'];?>' hidden>
-                                    <input type="text" name="hoja_de_vida" value=<?=$fila['hoja_de_vida'];?> hidden>
-                                    <input type="text" name="admin_supervisor" value=<?=$fila['admin_supervisor'];?> hidden>
+                                    <input type="text" name="correo"  value='$fila['correo'];?>' hidden>
+                                    <input type="text" name="hoja_de_vida" value='<?=$fila['hoja_de_vida'];?>'hidden>
+                                    <input type="text" name="admin_supervisor" value='<?=$fila['admin_supervisor'];?>'hidden>
 
                                     <button class="btn btn-primary" title="editar" type="submit"><i
                                             class="far fa-edit"></i></button>
