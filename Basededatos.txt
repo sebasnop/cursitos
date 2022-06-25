@@ -19,7 +19,7 @@
         )ENGINE = InnoDB ROW_FORMAT=DYNAMIC;
 
 
-    CREATE TABLE curso
+CREATE TABLE curso
         (codigo INT(6) zerofill auto_increment PRIMARY KEY,
         nombre VARCHAR(200) NOT NULL UNIQUE,
         categoria VARCHAR(50) NOT NULL,
@@ -32,7 +32,8 @@
         FOREIGN KEY fk_profesor(profesor_ensenia) REFERENCES profesor(nombre_usuario)  ON DELETE CASCADE,
         FOREIGN KEY fk_admin(admin_supervisa) REFERENCES administrador(nombre_usuario)  ON DELETE CASCADE,
 
-        cupos INT CHECK (cupos_disponibles BETWEEN 0 AND 350 AND cantidad_estudiantes <= cupos),
+        cupos INT CHECK (cupos BETWEEN 0 AND 350),
+        CHECK (cantidad_estudiantes <= cupos),
         fecha_fin DATE,
         CHECK (fecha_fin>=fecha_publicacion),
 
