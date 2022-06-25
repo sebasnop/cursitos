@@ -14,8 +14,7 @@
         nombre_completo VARCHAR(50) NOT NULL,
         correo VARCHAR(320) NOT NULL UNIQUE,
         hoja_de_vida VARCHAR(500) NOT NULL UNIQUE,
-        admin_supervisor VARCHAR(40),
-        UNIQUE(admin_supervisor),
+        admin_supervisor VARCHAR(40) UNIQUE(admin_supervisor),
         FOREIGN KEY fk_admin(admin_supervisor) REFERENCES administrador(nombre_usuario)  ON DELETE CASCADE
         )ENGINE = InnoDB ROW_FORMAT=DYNAMIC;
 
