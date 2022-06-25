@@ -62,5 +62,10 @@ INSERT INTO profesor VALUES ('profe6','claveprofe4','profe rios','profe5@cursito
 ///////// EN PROFESOR SE DEBE ARREGLAR LO DE LOS NULL PQ LOS ESTÁ TOMANDO COMO VALORES /////////
 
 
-    INSERT INTO curso VALUES (000001,'php','web','muy bueno',10,DATE('2022-02-02'),'SINCRONICO','profe1','admin1',2,DATE('2023-01-01'), NULL)
+    INSERT INTO curso VALUES (000001,'php','web','muy bueno',10,DATE('2022-02-02'),'SINCRONICO','profe1','admin1',2,DATE('2023-01-01'), NULL);
+    INSERT INTO curso VALUES (000002,'php2','web','más bueno',10,DATE('2022-03-02'),'SINCRONICO','profe2','admin3',2,DATE('2023-03-01'), NULL);
+    INSERT INTO curso VALUES (000003,'php3','web','maluquito',10,DATE('2022-04-02'),'SINCRONICO','profe4','admin5',2,DATE('2023-01-01'), NULL);
 
+    INSERT INTO curso VALUES (000004,'html','web','nice',10,DATE('2022-04-02'),'ASINCRONICO','profe3','admin6',NULL,NULL, 5);
+    INSERT INTO curso VALUES (000005,'html2','web','the best',6,DATE('2022-03-02'),'ASINCRONICO','profe1','admin5',NULL,NULL, 6);
+    INSERT INTO curso VALUES (000006,'html3','web','zzz',9,DATE('2022-05-02'),'ASINCRONICO','profe2','admin5',NULL,NULL, 7);
