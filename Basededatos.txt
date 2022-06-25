@@ -45,19 +45,20 @@
 
 
     //////////administrador: nombre_usuario(CP), clave, nombre_completo, correo, hoja_de_vida, capacidad///////// 
-    INSERT INTO administrador VALUES ('admin1','claveadmin1','admin1 perez','admin1@cursitos.com','www.hojadevida.com/admin1', 35);
-    INSERT INTO administrador VALUES ('admin2','claveadmin2','admin2 lopez','admin2@cursitos.com','www.hojadevida.com/admin2', 100);
-    INSERT INTO administrador VALUES ('admin3','claveadmin2','admin3 castro','admin3@cursitos.com','www.hojadevida.com/admin3', 43);
-    INSERT INTO administrador VALUES ('admin4','claveadmin4','admin3 castro','admin4@cursitos.com','www.hojadevida.com/admin4', 52);
-    INSERT INTO administrador VALUES ('admin5','claveadmin5','admin5 villa','admin5@cursitos.com','www.hojadevida.com/admin5', 100);
-    INSERT INTO administrador VALUES ('admin6','claveadmin5','admin5 villa','admin6@cursitos.com','www.hojadevida.com/admin6', 1234567);
+INSERT INTO administrador VALUES ('admin1','claveadmin1','admin1 perez','admin1@cursitos.com','www.hojadevida.com/admin1', 35);
+INSERT INTO administrador VALUES ('admin2','claveadmin2','admin2 lopez','admin2@cursitos.com','www.hojadevida.com/admin2', 100);
+INSERT INTO administrador VALUES ('admin3','claveadmin2','admin3 castro','admin3@cursitos.com','www.hojadevida.com/admin3', 43);
+INSERT INTO administrador VALUES ('admin4','claveadmin4','admin3 castro','admin4@cursitos.com','www.hojadevida.com/admin4', 39);
+INSERT INTO administrador VALUES ('admin5','claveadmin5','admin5 villa','admin5@cursitos.com','www.hojadevida.com/admin5', 100);
+INSERT INTO administrador VALUES ('admin6','claveadmin6','admin6 caro','admin6@cursitos.com','www.hojadevida.com/admin6', 80);
+/////////ADMINISTRADOR ESTÁ BIENNNNNN/////////
 
-    profesor: nombre_usuario(CP), clave, nombre_completo, correo
-    INSERT INTO profesor VALUES ('profe1','claveprofe1','profe perez','profe1@cursitos.com','www.hojadevida.com/profe1','admin1');
-    INSERT INTO profesor VALUES ('profe2','claveprofe2','profe vera','profe2@cursitos.com','www.hojadevida.com/profe2','admin1');
-    INSERT INTO profesor VALUES ('profe3','claveprofe3','profe vera','profe3@cursitos.com','www.hojadevida.com/profe3','admin1');
-    INSERT INTO profesor VALUES ('profe4','claveprofe4','profe cano','profe4@cursitos.com','www.hojadevida.com/profe4','admin1');
-    INSERT INTO profesor VALUES ('profe5','claveprofe4','profe velez','profe5@cursitos.com','www.hojadevida.com/profe5','admin1');
+INSERT INTO profesor VALUES ('profe1','claveprofe1','profe perez','profe1@cursitos.com','www.hojadevida.com/profe1','admin3');
+INSERT INTO profesor VALUES ('profe2','claveprofe2','profe vera','profe2@cursitos.com','www.hojadevida.com/profe2', NULL);
+INSERT INTO profesor VALUES ('profe3','claveprofe3','profe vera','profe3@cursitos.com','www.hojadevida.com/profe3','admin2');
+INSERT INTO profesor VALUES ('profe4','claveprofe4','profe cano','profe4@cursitos.com','www.hojadevida.com/profe4','admin1');
+INSERT INTO profesor VALUES ('profe5','claveprofe4','profe velez','profe5@cursitos.com','www.hojadevida.com/profe5','admin4');
+INSERT INTO profesor VALUES ('profe6','claveprofe4','profe rios','profe5@cursitos.com','www.hojadevida.com/profe6', NULL);
 
 
 
