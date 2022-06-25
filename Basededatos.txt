@@ -32,14 +32,14 @@
         FOREIGN KEY fk_profesor(profesor_ensenia) REFERENCES profesor(nombre_usuario)  ON DELETE CASCADE,
         FOREIGN KEY fk_admin(admin_supervisa) REFERENCES administrador(nombre_usuario)  ON DELETE CASCADE,
 
-        cupos_disponibles INT CHECK (cupos_disponibles BETWEEN 0 AND 350),
+        cupos INT CHECK (cupos_disponibles BETWEEN 0 AND 350 AND cantidad_estudiantes <= cupos),
         fecha_fin DATE,
         CHECK (fecha_fin>=fecha_publicacion),
 
         duracion_estimada INT CHECK (duracion_estimada BETWEEN 0 AND 366),
 
-        CHECK ((tipo='SINCRONICO' AND cupos_disponibles IS NOT NULL AND fecha_fin IS NOT NULL AND duracion_estimada IS NULL)
-        OR (tipo='ASINCRONICO' AND  duracion_estimada IS NOT NULL AND cupos_disponibles IS NULL AND fecha_fin IS NULL))
+        CHECK ((tipo='SINCRONICO' AND cupos IS NOT NULL AND fecha_fin IS NOT NULL AND duracion_estimada IS NULL)
+        OR (tipo='ASINCRONICO' AND  duracion_estimada IS NOT NULL AND cupos IS NULL AND fecha_fin IS NULL))
         )ENGINE = InnoDB ROW_FORMAT=DYNAMIC;
 
 
@@ -62,12 +62,12 @@ INSERT INTO profesor VALUES ('profe6','claveprofe4','profe rios','profe5@cursito
 ///////// EN PROFESOR SE DEBE ARREGLAR LO DE LOS NULL PQ LOS ESTÁ TOMANDO COMO VALORES /////////
 
 
-INSERT INTO curso VALUES (1,'php','web','muy bueno', 10,DATE('2022-02-02'),'SINCRONICO','profe1','admin1',2,DATE('2023-01-01'), NULL);
-INSERT INTO curso VALUES (2,'php2','web','más bueno', 35,DATE('2022-03-02'),'SINCRONICO','profe2','admin3',40,DATE('2023-03-01'), NULL);
-INSERT INTO curso VALUES (3,'php3','web','maluquito', 10,DATE('2022-04-02'),'SINCRONICO','profe4','admin5',2,DATE('2023-01-01'), NULL);
-INSERT INTO curso VALUES (4,'html','web','nice',10, DATE('2022-04-02'),'ASINCRONICO','profe3','admin6',NULL,NULL, 5);
-INSERT INTO curso VALUES (5,'html2','web','the best', 6,DATE('2022-03-02'),'ASINCRONICO','profe1','admin5',NULL,NULL, 6);
-INSERT INTO curso VALUES (6, 'html3', 'web', 'zzz', 9, DATE('2022-05-02'), 'ASINCRONICO', 'profe2','admin5',NULL,NULL, 7);
+INSERT INTO curso VALUES (1, 'php', 'web', 'muy bueno', 10, DATE('2022-02-02'), 'SINCRONICO', 'profe1', 'admin1', 11, DATE('2023-01-01'), NULL);
+INSERT INTO curso VALUES (2, 'php2', 'web', 'más bueno', 35, DATE('2022-03-02'), 'SINCRONICO', 'profe2', 'admin3', 35, DATE('2023-03-01'), NULL);
+INSERT INTO curso VALUES (3, 'php3', 'web', 'maluquito', 10, DATE('2022-04-02'), 'SINCRONICO', 'profe4', 'admin5', 60, DATE('2023-01-01'), NULL);
+INSERT INTO curso VALUES (4, 'html', 'web', 'nice', 10, DATE('2022-04-02'), 'ASINCRONICO', 'profe3', 'admin6', NULL, NULL, 5);
+INSERT INTO curso VALUES (5, 'html2', 'web', 'the best', 6, DATE('2022-03-02'), 'ASINCRONICO', 'profe1', 'admin5', NULL, NULL, 6);
+INSERT INTO curso VALUES (6, 'html3', 'web', 'zzz', 9, DATE('2022-05-02'), 'ASINCRONICO', 'profe2', 'admin5', NULL, NULL, 7);
 
 
 
