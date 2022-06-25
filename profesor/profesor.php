@@ -82,15 +82,24 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Supervisor</label>
-                                <input type="text" name="admin_supervisor" value=<?=$_GET["admin_supervisor"];?> id="admin_supervisor" class="form-control">
-                            </div>
+                                <select name="admin_supervisor" id="admin_supervisor" multiple class="form-control" id="exampleFormControlSelect3">
+                                    <?php
+                                    require('select_a.php');
+                                    if($result){
+                                        foreach ($result as $fila){
+                                    ?>
+                                            <option value=<?=$fila['nombre_usuario'];?>  ><b>Usuario:</b> <?=$fila['nombre_usuario'];?> </option>
+                                    <?php
+                                        }
+                                    }                        
+                                    ?>                                          
+                                </select>
+                        </div> 
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="Guardar">
                                 <a href="profesor.php" class="btn btn-danger">Descartar</a>
-                                
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>
@@ -127,17 +136,26 @@
                             <input type="text" name="hoja_de_vida" id="hoja_de_vida" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="">Supervisor</label>
-                            <input type="text" name="admin_supervisor" id="admin_supervisor" class="form-control">
-                        </div>
+                                <label for="">Supervisor</label>
+                                <select name="admin_supervisor" id="admin_supervisor" multiple class="form-control" id="exampleFormControlSelect3">
+                                    <?php
+                                    require('select_a.php');
+                                    if($result){
+                                        foreach ($result as $fila){
+                                    ?>
+                                            <option value=<?=$fila['nombre_usuario'];?>  ><b>Usuario:</b> <?=$fila['nombre_usuario'];?> </option>
+                                    <?php
+                                        }
+                                    }                        
+                                    ?>                                          
+                                </select>
+                        </div>                                    
+
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="Insertar">
                             <a href="profesor.php" class="btn btn-success">Reiniciar</a>
                             </div>
-                            
-
                         </form>
-
                     </div>
                 </div>
             </div>

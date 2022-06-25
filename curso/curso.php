@@ -19,6 +19,9 @@
     para mas informacio : https://fontawesome.com/start-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    
 </head>
 
 <body>
@@ -83,37 +86,60 @@
                                 <label for="">Fecha de publicación</label>
                                 <input type="date" name="fecha_publicacion" value=<?=$_GET["fecha_publicacion"];?> id="fecha_publicacion" class="form-control">
                             </div>
-                            <div class="form-group">
-                                <label for="">Tipo</label>
-                                <input type="text" name="tipo" value=<?=$_GET["tipo"];?> id="tipo" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Profesor</label>
-                                <input type="text" name="profesor_ensenia" value=<?=$_GET["profesor_ensenia"];?> id="profesor_ensenia" class="form-control">
-                            </div>                            
-                            <div class="form-group">
-                                <label for="">Administrador</label>
-                                <input type="text" name="admin_supervisa" value=<?=$_GET["admin_supervisa"];?> id="admin_supervisa" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Cupos Disponibles</label>
-                                <input type="text" name="cupos_disponibles" value=<?=$_GET["cupos_disponibles"];?> id="cupos_disponibles" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Fecha de finalización</label>
-                                <input type="date" name="fecha_fin" value=<?=$_GET["fecha_fin"];?> id="fecha_fin" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Duración estimada</label>
-                                <input type="text" name="duracion_estimada" value=<?=$_GET["duracion_estimada"];?> id="duracion_estimada" class="form-control">
-                            </div>
+                            <div  name="taskOption" class="form-group">
+                                <label for="exampleFormControlSelect2">Tipo</label>
+                                <select class="form-control" onchange="cambioTipo(this)" name="tipo" id="exampleFormControlSelect2">
+                                <option selected="true" disabled="disabled">Seleccione el tipo</option>
+                                <option value="SINCRONICO"> Sincrónico</option>
+                                <option value="ASINCRONICO">Asincrónico</option>
+                                
+                                </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Profesor</label>
+                            <input type="text" name="profesor_ensenia" id="profesor_ensenia" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Administrador</label>
+                            <input type="text" name="admin_supervisa" id="admin_supervisa" class="form-control">
+                        </div>
+                        <div id="cupos" class="form-group">
+                            <label for="">Cupos Disponibles</label>
+                            <input type="text" name="cupos_disponibles" id="cupos_disponibles" class="form-control">
+                        </div>
+                        <div id="fechafin" class="form-group">
+                            <label for="">Fecha de finalización</label>
+                            <input type="date" name="fecha_fin" id="fecha_fin" class="form-control">
+                        </div>
+                        <div id="duracion" class="form-group">
+                            <label for="">Duración estimada</label>
+                            <input type="text" name="duracion_estimada" id="duracion_estimada" class="form-control">
+                        </div>
+                        <script>                               
+                            $("#cupos").hide();
+                            $("#fechafin").hide();
+                            $("#duracion").hide();
+                        </script>
+                        <script>                               
+                                function cambioTipo(select) {                                                                 
+                                    if(select.value==="SINCRONICO"){                                     
+                                        $("#duracion").hide();
+                                        $("#cupos").show();
+                                        $("#fechafin").show();                                        
+                                    }
+                                    else if(select.value==="ASINCRONICO"){
+                                        $("#cupos").hide();
+                                        $("#fechafin").hide();
+                                        $("#duracion").show();
+                                    }                           
+                                }
+                        </script>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="Guardar">
                                 <a href="curso.php" class="btn btn-danger">Descartar</a>
                                 
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>
@@ -154,30 +180,76 @@
                             <input type="date" name="fecha_publicacion" id="fecha_publicacion" class="form-control">
 
                         </div>
-                        <div class="form-group">
-                            <label for="">Tipo</label>
-                            <input type="text" name="tipo" id="tipo" class="form-control">
+                        <div  name="taskOption" class="form-group">
+                                <label for="exampleFormControlSelect2">Tipo</label>
+                                <select class="form-control" onchange="cambioTipo(this)" name="tipo" id="exampleFormControlSelect2">
+                                <option selected="true" disabled="disabled">Seleccione el tipo</option>
+                                <option value="SINCRONICO"> Sincrónico</option>
+                                <option value="ASINCRONICO">Asincrónico</option>                                
+                                </select>
                         </div>
                         <div class="form-group">
-                            <label for="">Profesor</label>
-                            <input type="text" name="profesor_ensenia" id="profesor_ensenia" class="form-control">
+                                <label for="">Profesor</label>
+                                <select name="profesor_ensenia" id="profesor_ensenia" multiple class="form-control" id="exampleFormControlSelect2">
+                                    <?php
+                                    require('select_p.php');
+                                    if($result){
+                                        foreach ($result as $fila){
+                                    ?>
+                                            <option value=<?=$fila['nombre_usuario'];?>  ><b>Usuario:</b> <?=$fila['nombre_usuario'];?> </option>
+                                    <?php
+                                        }
+                                    }                        
+                                    ?>                                          
+                                </select>
                         </div>
                         <div class="form-group">
-                            <label for="">Administrador</label>
-                            <input type="text" name="admin_supervisa" id="admin_supervisa" class="form-control">
-                        </div>
-                        <div class="form-group">
+                                <label for="">Administrador</label>
+                                <select name="admin_supervisa" id="admin_supervisa" multiple class="form-control" id="exampleFormControlSelect3">
+                                    <?php
+                                    require('select_a.php');
+                                    if($result){
+                                        foreach ($result as $fila){
+                                    ?>
+                                            <option value=<?=$fila['nombre_usuario'];?>  ><b>Usuario:</b> <?=$fila['nombre_usuario'];?> </option>
+                                    <?php
+                                        }
+                                    }                        
+                                    ?>                                          
+                                </select>
+                        </div>                                    
+
+                        <div id="cupos" class="form-group">
                             <label for="">Cupos Disponibles</label>
                             <input type="text" name="cupos_disponibles" id="cupos_disponibles" class="form-control">
                         </div>
-                        <div class="form-group">
+                        <div id="fechafin" class="form-group">
                             <label for="">Fecha de finalización</label>
                             <input type="date" name="fecha_fin" id="fecha_fin" class="form-control">
                         </div>
-                        <div class="form-group">
+                        <div id="duracion" class="form-group">
                             <label for="">Duración estimada</label>
                             <input type="text" name="duracion_estimada" id="duracion_estimada" class="form-control">
                         </div>
+                        <script>                               
+                            $("#cupos").hide();
+                            $("#fechafin").hide();
+                            $("#duracion").hide();
+                        </script>
+                        <script>                               
+                                function cambioTipo(select) {                                                                 
+                                    if(select.value==="SINCRONICO"){                                     
+                                        $("#duracion").hide();
+                                        $("#cupos").show();
+                                        $("#fechafin").show();                                        
+                                    }
+                                    else if(select.value==="ASINCRONICO"){
+                                        $("#cupos").hide();
+                                        $("#fechafin").hide();
+                                        $("#duracion").show();
+                                    }                           
+                                }
+                        </script>
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="Insertar">
                             <a href="curso.php" class="btn btn-success">Reiniciar</a>
@@ -211,7 +283,7 @@
                             <th scope="col">Fecha de finalización</th>
                             <th scope="col">Duración estimada</th>
 
-                            <th scope="col">Opciones</th>
+                            <!-- <th scope="col">Opciones</th> -->
                             <th></th>
                         </tr>
                     </thead>
@@ -234,8 +306,7 @@
                             <td><?=$fila['cupos_disponibles'];?></td>
                             <td><?=$fila['fecha_fin'];?></td>
                             <td><?=$fila['duracion_estimada'];?></td>
-
-                            <td>
+                            <!-- <td>
 
                                 <form action="delete_c.php" method="POST">
                                     <input type="text" value='<?=$fila['codigo'];?>' hidden>
@@ -262,7 +333,7 @@
                                     <button class="btn btn-primary" title="editar" type="submit"><i
                                             class="far fa-edit"></i></button>
                                 </form>
-                            </td>
+                            </td> -->
                         </tr>
                         <?php                    
                                 }
