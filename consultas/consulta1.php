@@ -22,30 +22,35 @@
         <table class="table border-rounded">
             <thead class="thead ">
                 <tr>
-                    <th scope="col">Codigo</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Valor</th>
-                    <th scope="col">Tipo</th>
+                    <th scope="col">Nombre de usuario</th>
+                    <th scope="col">Nombre completo</th>
                 </tr>
             </thead>
             <tbody>
             <?php
                     require('../configuraciones/conexion.php');
-                    if($_POST["exampleRadios"]==="comprador"){
-                        $query="SELECT * FROM factura WHERE cedula_p='$_POST[identificacion]' OR nit_E='$_POST[identificacion]'";
-                    }
-                    else{
-                        $query="SELECT * FROM factura WHERE codigo='$_POST[identificacion]'";
-                    }                    
+                    
+                    $query="SELECT nombre_usuario, nombre_completo FROM profesor 
+                    WHERE admin_supervisor IS NOT NULL
+                        AND nombre_usuario IN 
+                            (SELECT profesor_ensenia
+                                    FROM curso
+                                    GROUP BY profesor_ensenia
+                                    HAVING COUNT(*) >= 3 AND SUM(cantidad_estudiantes) > 1000
+                             )
+                              AND admin_supervisor NOT IN 
+                                 (SELECT admin_supervisa 
+                                 FROM curso 
+                                 WHERE admin_supervisa IS NOT NULL);";
+                                   
                     $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
                     if($result){
                         foreach($result as $fila){
                         ?>
                             <tr>
-                                <td><?=$fila['codigo'];?></td>
-                                <td><?=$fila['fecha'];?></td>
-                                <td><?=$fila['valor'];?></td>
-                                <td><?=$fila['tipo'];?></td>
+                                <td><?=$fila['nombre_usuario'];?></td>
+                                <td><?=$fila['nombre_completo'];?></td>
+                               
                             </tr>
                         <?php
                         }
@@ -54,6 +59,7 @@
                         echo "Ha ocurrido un error al buscar, intenta de nuevo";
                     }
             ?>
+            <a href = "consultas.php">Regresar</a>
 
             </tbody>
         </table>

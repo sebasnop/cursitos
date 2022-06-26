@@ -42,7 +42,7 @@
             <a class="nav-link active" href="busquedas.php">Busquedas</a>
         </li>
         <li class="nav-item nav-pills">
-            <a class="nav-link active" href="../consultas/consultas.php">consultas</a>
+            <a class="nav-link active" href="../consultas/consultas.php">Consultas</a>
         </li>
     </ul>
     <div class="container">
@@ -73,6 +73,9 @@
                 <li>El curso tiene una cantidad de estudiantes mayor que la capacidad del administrador que lo supervisa</li>
                 <li>El profesor que enseña el curos es supervisado por el administrador que supervisa el curso</li>
                 </ul>
+
+                <a href = "consulta1.php" class = "btn btn-primary">Consultar 2</a>
+              
                
             </div>
             
