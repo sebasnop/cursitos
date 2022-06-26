@@ -64,7 +64,7 @@
                         <form action="update_p.php" class="form-group" method="post">
                             <div class="form-group">
                                 <label for="nombre_usuario">Usuario</label>
-                                <input type="text" readonly name="nombre_usuario" value=<?=$_GET["nombre_usuario"];?>'id="nombre_usuario"
+                                <input type="text" readonly name="nombre_usuario" value=<?=$_GET["nombre_usuario"];?> id="nombre_usuario"
                                     class="form-control">
                             </div>
                             <div class="form-group">
@@ -81,7 +81,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Link de hoja de vida</label>
-                                <input type="text" name="hoja_de_vida" value=<?=$_GET["hoja_de_vida"];?>'id="hoja_de_vida" class="form-control">
+                                <input type="text" name="hoja_de_vida" value=<?=$_GET["hoja_de_vida"];?> id="hoja_de_vida" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="">Supervisor</label>
