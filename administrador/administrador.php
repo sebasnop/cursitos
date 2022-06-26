@@ -1,7 +1,7 @@
 <!-- En esta pagina puede encontrar mas informacion acerca de la estructura de un documento html 
     http://www.iuma.ulpgc.es/users/jmiranda/docencia/Tutorial_HTML/estruct.htm-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <!--cabezera del html -->
 
 <head>
@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--titrulo de la pagina-->
-    <title>Inicio</title>
+    <title>Administrador</title>
     <!--CDN de boostraps: Libreria de estilos SCSS y CSS para darle unas buena apariencia a la aplicacion
     para mas informacion buscar documentacion de boostraps en: https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -22,6 +22,7 @@
 </head>
 
 <body>
+
     <!--Barra de navegacion-->
     <ul class="nav">
         <li class="nav nav-item">
@@ -47,6 +48,7 @@
             <a class="nav-link active" href="../consultas/consultas.php">Consultas</a>
         </li>
     </ul>
+
     <div class="container mt-3">
         <div class="row">
             <?php
