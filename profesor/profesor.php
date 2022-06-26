@@ -1,6 +1,6 @@
 <!-- En esta pagina puede encontrar mas informacion acerca de la estructura de un documento html 
     http://www.iuma.ulpgc.es/users/jmiranda/docencia/Tutorial_HTML/estruct.htm-->
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <!--cabezera del html -->
 
@@ -86,6 +86,7 @@
                             <div class="form-group">
                                 <label for="">Supervisor</label>
                                 <select name="admin_supervisor" id="admin_supervisor" multiple class="form-control" id="exampleFormControlSelect3">
+                                <option value=NULL >NULL</option>
                                     <?php
                                     require('select_a.php');
                                     if($result){
@@ -97,7 +98,7 @@
                                     }                        
                                     ?>'                                         
                                 </select>
-                        </div> 
+                            </div>      
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="Guardar">
                                 <a href="profesor.php" class="btn btn-danger">Descartar</a>
@@ -141,6 +142,7 @@
                         <div class="form-group">
                                 <label for="">Supervisor</label>
                                 <select name="admin_supervisor" id="admin_supervisor" multiple class="form-control" id="exampleFormControlSelect3">
+                                <option value=NULL>NULL</option>
                                     <?php
                                     require('select_a.php');
                                     if($result){
@@ -189,19 +191,19 @@
                             foreach ($result as $fila){
                         ?>
                         <tr>
-                            <td>'<?=$fila['nombre_usuario'];?></td>
-                            <td>'<?=$fila['clave'];?></td>
-                            <td>'<?=$fila['nombre_completo'];?></td>
+                            <td><?=$fila['nombre_usuario'];?></td>
+                            <td><?=$fila['clave'];?></td>
+                            <td><?=$fila['nombre_completo'];?></td>
 
-                            <td>'<?=$fila['correo'];?></td>
-                            <td>'<?=$fila['hoja_de_vida'];?></td>
-                            <td>'<?=$fila['admin_supervisor'];?></td>
+                            <td><?=$fila['correo'];?></td>
+                            <td><?=$fila['hoja_de_vida'];?></td>
+                            <td><?=$fila['admin_supervisor'];?></td>
 
                             <td>
 
                                 <form action="delete_p.php" method="POST">
-                                    <input type="text" value='<?=$fila['nombre_usuario'];?>'hidden>
-                                    <input type="text" name="d" value='<?=$fila['nombre_usuario'];?>'hidden>
+                                    <input type="text" value=<?=$fila['nombre_usuario'];?> hidden>
+                                    <input type="text" name="d" value='<?=$fila['nombre_usuario'];?>' hidden>
                                     <button class="btn btn-danger" title="eliminar" type="submit"><i
                                             class="fas fa-trash-alt"></i></button>
                                 </form>
@@ -209,11 +211,11 @@
                             <td class="mx-0 pr-2">
                                 <form action="profesor.php" method="GET">
                                     
-                                    <input type="text" name="nombre_usuario" value='<?=$fila['nombre_usuario'];?>'hidden>
-                                    <input type="text" name="clave"  value='$fila['clave'];?>' hidden>
-                                    <input type="text" name="nombre_completo"  value='$fila['nombre_completo'];?>' hidden>
+                                    <input type="text" name="nombre_usuario" value='<?=$fila['nombre_usuario'];?>' hidden>
+                                    <input type="text" name="clave" value='<?=$fila['clave'];?>' hidden>
+                                    <input type="text" name="nombre_completo"  value='<?=$fila['nombre_completo'];?>' hidden>
 
-                                    <input type="text" name="correo"  value='$fila['correo'];?>' hidden>
+                                    <input type="text" name="correo"  value='<?=$fila['correo'];?>' hidden>
                                     <input type="text" name="hoja_de_vida" value='<?=$fila['hoja_de_vida'];?>'hidden>
                                     <input type="text" name="admin_supervisor" value='<?=$fila['admin_supervisor'];?>'hidden>
 
