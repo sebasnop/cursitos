@@ -107,8 +107,8 @@
                             <input type="text" name="admin_supervisa" id="admin_supervisa" class="form-control">
                         </div>
                         <div id="cupos" class="form-group">
-                            <label for="">Cupos Disponibles</label>
-                            <input type="text" name="cupos_disponibles" id="cupos_disponibles" class="form-control">
+                            <label for="">Cupos </label>
+                            <input type="text" name="cupos" id="cupos" class="form-control">
                         </div>
                         <div id="fechafin" class="form-group">
                             <label for="">Fecha de finalización</label>
@@ -223,8 +223,8 @@
                         </div>                                    
 
                         <div id="cupos" class="form-group">
-                            <label for="">Cupos Disponibles</label>
-                            <input type="text" name="cupos_disponibles" id="cupos_disponibles" class="form-control">
+                            <label for="">Cupos</label>
+                            <input type="text" name="cupos}" id="cupos" class="form-control">
                         </div>
                         <div id="fechafin" class="form-group">
                             <label for="">Fecha de finalización</label>
@@ -282,7 +282,7 @@
                             <th scope="col">Tipo</th>
                             <th scope="col">Profesor</th>
                             <th scope="col">Administrador</th>
-                            <th scope="col">Cupos Disponibles</th>
+                            <th scope="col">Cupos</th>
                             <th scope="col">Fecha de finalización</th>
                             <th scope="col">Duración estimada</th>
 
@@ -306,7 +306,7 @@
                             <td><?=$fila['tipo'];?></td>
                             <td><?=$fila['profesor_ensenia'];?></td>
                             <td><?=$fila['admin_supervisa'];?></td>
-                            <td><?=$fila['cupos_disponibles'];?></td>
+                            <td><?=$fila['cupos'];?></td>
                             <td><?=$fila['fecha_fin'];?></td>
                             <td><?=$fila['duracion_estimada'];?></td>
                             <!-- <td>
@@ -329,7 +329,7 @@
                                     <input type="text" name="tipo" value='<?=$fila['tipo'];?>' hidden>
                                     <input type="text" name="profesor_ensenia" value='<?=$fila['profesor_ensenia'];?>' hidden>
                                     <input type="text" name="admin_supervisa" value='<?=$fila['admin_supervisa'];?>' hidden>
-                                    <input type="text" name="cupos_disponibles" value='<?=$fila['cupos_disponibles'];?>' hidden>
+                                    <input type="text" name="cupos" value='<?=$fila['cupos'];?>' hidden>
                                     <input type="date" name="fecha_fin" value='<?=$fila['fecha_fin'];?>' hidden>
                                     <input type="text" name="duracion_estimada" value='<?=$fila['duracion_estimada'];?>' hidden>
 
