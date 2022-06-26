@@ -44,9 +44,14 @@
         <div class="row my-2">
             <div class="col-6">
                 <h2>Consulta 1</h2>
-                <p>La siguiente consulta mostrará el nombre de usuario y el nombre completo de cada uno de los profesores que cumple todas las siguientes condiciones: </p>
-                <ul>Es supervisado</ul>
-                <p>Es supervisado, tiene sumaestudiantes > 1000, ha enseñado al menos 3 cursos y el administrador que lo supervisa no ha supervisado ni un solo curso. </p>
+                <p>La siguiente consulta mostrará el nombre de usuario y el nombre completo de cada uno de los profesores que cumple con todas las siguientes condiciones: </p>
+                <ul>    
+                <li>El pofesor es supervisado</li>
+                <li>La sumatoria de la cantidad de estudiantes de los cursos en los que enseña dicho profesor es mayor a 1000 estudiantes.</li>
+                <li>El pofesor enseña al menos 3 cursos</li>
+                <li>El administrador que supervisa al profesor no es supervisor de un curso</li>
+                </ul>
+               
                 <form action="buscar.php" target="_blank"  method="POST">
                     <div class="form-group">
                         <label for="">Parametros:</label>
@@ -79,7 +84,12 @@
     <div class="container">
         <div class="row my-2">
             <div class="col-6">
-                <p>Consulta 2</p>
+            <h2>Consulta 2</h2>
+                <p>La siguiente consulta mostrará el código y la cantidad de estudiantes de cada uno de los cursos que cumple todas las siguientes condiciones: </p>
+                <ul>    
+                <li>El curso tiene una cantidad de estudiantes mayor que la capacidad del administrador que lo supervisa</li>
+                <li>El profesor que enseña el curos es supervisado por el administrador que supervisa el curso</li>
+                </ul>
                 <form action="buscar.php" target="_blank"  method="POST">
                     <div class="form-group">
                         <label for="">Parametros:</label>
