@@ -28,11 +28,16 @@
             <a class="nav-link " href="../index.html">Inicio</a>
         </li>
         <li class="nav ">
-            <a class="nav-link " href="../personas/personas.php">Personas</a>
+            <a class="nav-link " href="../administrador/administrador.php">Administrador</a>
         </li>
-        <li class="nav">
-            <a class="nav-link" href="../facturas/facturas.php">Facturas</a>
+        <li class="nav-item nav-pills">
+            <a class="nav-link active"  href="../profesor/profesor.php">Profesor</a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="../curso/curso.php">Curso</a>
+        </li>
+
         <li class="nav-item nav-pills">
             <a class="nav-link active" href="busquedas.php">Busquedas</a>
         </li>
