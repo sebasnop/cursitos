@@ -52,30 +52,7 @@
                 <li>El administrador que supervisa al profesor no es supervisor de un curso</li>
                 </ul>
                
-                <form action="buscar.php" target="_blank"  method="POST">
-                    <div class="form-group">
-                        <label for="">Parametros:</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                value="comprador" checked>
-                            <label class="form-check-label" for="exampleRadios1">
-                                Identificacion del Comprador
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
-                                value="factura">
-                            <label class="form-check-label" for="exampleRadios2">
-                                Codigo de la Factura
-                            </label>
-                        </div>
-                    </div>
-                    <div class="input-group ">
-                        <input type="text" name="identificacion" id="identificacion" class="form-control">
-                        <button class="btn  btn-primary"  title="Buscar" type="submit">
-                            <i class="fas fa-search-plus mx-0 my-0"> </i></button>
-                    </div>
-                </form>
+              
             </div>
             
         </div>
@@ -90,30 +67,7 @@
                 <li>El curso tiene una cantidad de estudiantes mayor que la capacidad del administrador que lo supervisa</li>
                 <li>El profesor que enseña el curos es supervisado por el administrador que supervisa el curso</li>
                 </ul>
-                <form action="buscar.php" target="_blank"  method="POST">
-                    <div class="form-group">
-                        <label for="">Parametros:</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                value="comprador" checked>
-                            <label class="form-check-label" for="exampleRadios1">
-                                Identificacion del Comprador
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
-                                value="factura">
-                            <label class="form-check-label" for="exampleRadios2">
-                                Codigo de la Factura
-                            </label>
-                        </div>
-                    </div>
-                    <div class="input-group ">
-                        <input type="text" name="identificacion" id="identificacion" class="form-control">
-                        <button class="btn  btn-primary"  title="Buscar" type="submit">
-                            <i class="fas fa-search-plus mx-0 my-0"> </i></button>
-                    </div>
-                </form>
+               
             </div>
             
         </div>
