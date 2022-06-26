@@ -56,7 +56,8 @@
                 <li>El pofesor enseña al menos 3 cursos</li>
                 <li>El administrador que supervisa al profesor no es supervisor de un curso</li>
                 </ul>
-               
+            
+                <a href = "consulta1.php" class = "btn btn-primary">Consultar 1</a>
               
             </div>
             
