@@ -31,17 +31,15 @@
                     require('../configuraciones/conexion.php');
                     
                     $query="SELECT nombre_usuario, nombre_completo FROM profesor 
-                    WHERE admin_supervisor IS NOT NULL
-                        AND nombre_usuario IN 
-                            (SELECT profesor_ensenia
-                                    FROM curso
-                                    GROUP BY profesor_ensenia
-                                    HAVING COUNT(*) >= 3 AND SUM(cantidad_estudiantes) > 1000
-                             )
-                              AND admin_supervisor NOT IN 
-                                 (SELECT admin_supervisa 
-                                 FROM curso 
-                                 WHERE admin_supervisa IS NOT NULL);";
+                            WHERE admin_supervisor IS NOT NULL
+                                AND nombre_usuario IN  (SELECT profesor_ensenia
+                                                        FROM curso
+                                                        GROUP BY profesor_ensenia
+                                                        HAVING COUNT(*) >= 3 AND SUM(cantidad_estudiantes) > 1000
+                                                        )
+                                AND admin_supervisor NOT IN (SELECT admin_supervisa 
+                                FROM curso 
+                                WHERE admin_supervisa IS NOT NULL);";
                                    
                     $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
                     if($result){

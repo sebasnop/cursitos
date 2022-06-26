@@ -74,7 +74,7 @@
                 <li>El profesor que enseña el curos es supervisado por el administrador que supervisa el curso</li>
                 </ul>
 
-                <a href = "consulta1.php" class = "btn btn-primary">Consultar 2</a>
+                <a href = "consulta2.php" class = "btn btn-primary">Consultar 2</a>
               
                
             </div>
