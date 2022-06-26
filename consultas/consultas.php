@@ -1,6 +1,6 @@
 <!-- En esta pagina puede encontrar mas informacion acerca de la estructura de un documento html 
     http://www.iuma.ulpgc.es/users/jmiranda/docencia/Tutorial_HTML/estruct.htm-->
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <!--cabecera del html -->
 
@@ -37,13 +37,16 @@
             <a class="nav-link active" href="busquedas.php">Busquedas</a>
         </li>
         <li class="nav-item nav-pills">
-            <a class="nav-link active" href="../consultas/consultas.php">Consultas</a>
+            <a class="nav-link active" href="../consultas/consultas.php">consultas</a>
         </li>
     </ul>
     <div class="container">
         <div class="row my-2">
             <div class="col-6">
-                <p>Para realizar una busqueda de facturas primero selecciona y llena los parametros de la busqueda.</p>
+                <h2>Consulta 1</h2>
+                <p>La siguiente consulta mostrará el nombre de usuario y el nombre completo de cada uno de los profesores que cumple todas las siguientes condiciones: </p>
+                <ul>Es supervisado</ul>
+                <p>Es supervisado, tiene sumaestudiantes > 1000, ha enseñado al menos 3 cursos y el administrador que lo supervisa no ha supervisado ni un solo curso. </p>
                 <form action="buscar.php" target="_blank"  method="POST">
                     <div class="form-group">
                         <label for="">Parametros:</label>
@@ -73,6 +76,38 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="row my-2">
+            <div class="col-6">
+                <p>Consulta 2</p>
+                <form action="buscar.php" target="_blank"  method="POST">
+                    <div class="form-group">
+                        <label for="">Parametros:</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                value="comprador" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Identificacion del Comprador
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                value="factura">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Codigo de la Factura
+                            </label>
+                        </div>
+                    </div>
+                    <div class="input-group ">
+                        <input type="text" name="identificacion" id="identificacion" class="form-control">
+                        <button class="btn  btn-primary"  title="Buscar" type="submit">
+                            <i class="fas fa-search-plus mx-0 my-0"> </i></button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
 
 
 

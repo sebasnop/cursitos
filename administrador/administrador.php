@@ -42,6 +42,14 @@
         <li class="nav ">
             <a class="nav-link " href="../busquedas/busquedas.php">Busquedas</a>
         </li>
+
+        <li class="nav-item nav-pills">
+            <a class="nav-link active" href="../consultas/consultas.php">Busquedas</a>
+        </li>
+
+        <li class="nav-item nav-pills">
+            <a class="nav-link active" href="../consultas/consultas.php">Consultas</a>
+        </li>
     </ul>
     <div class="container mt-3">
         <div class="row">
