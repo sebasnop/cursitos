@@ -16,9 +16,20 @@
              para mas informacion : https://fontawesome.com/start-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
               integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+        <!-- Favicon: Icono de la pestana del navegador -->
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
     </head>
 
     <body>
+
+        <main>
+            <div class="container my-5">
+                <h1>Búsqueda 1</h1>
+
+            <div>
+        </main>
 
         <?php ?>
     </body>

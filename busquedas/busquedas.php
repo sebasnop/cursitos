@@ -17,6 +17,10 @@
              para mas informacion : https://fontawesome.com/start-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
             integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+        <!-- Favicon: Icono de la pestana del navegador -->
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
     </head>
 
     <body>
@@ -24,7 +28,13 @@
         <header>
 
             <!--Barra de navegacion-->
-            <nav class="navbar">
+            <nav class="navbar navbar-light bg-white">
+
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="Logo Cursitos">
+                    Cursitos
+                </a>
+
                 <ul class="nav nav-pills">
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html">Inicio</a>
@@ -69,7 +79,7 @@
                             que han enseñado <strong>n</strong> cursos en el rango de fechas [<strong>f1</strong>, <strong>f2</strong>].
                         </p>
 
-                        <form action="busquedas.php" method="GET">
+                        <form action="busqueda1.php" method="POST">
 
                             <!-- Numero de cursos (n) -->
                             <div class="form-group">
@@ -90,7 +100,7 @@
                             <div class="form-group">
                                 <label for="f2">Fecha final</label>
                                 <input type="date" class="form-control" id="f2" name="f2" aria-describedby="date2Help" required>
-                                <small id="date2Help" class="form-text text-muted">Ultimo día en el cuál se buscarán cursos (f2).</small>
+                                <small id="date2Help" class="form-text text-muted">Ultimo día en el cuál se buscarán cursos, posterior al anterior (f2).</small>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Enviar</button>
@@ -111,22 +121,22 @@
                             que han supervisado entre [<strong>n1</strong>, <strong>n2</strong>] cantidad de cursos.
                         </p>
 
-                        <form action="busquedas.php" method="GET">
+                        <form action="busqueda2.php" method="POST">
 
                             <!-- Numero minimo de cursos (n1) -->
                             <div class="form-group">
                                 <label for="n1">Cantidad mínima de cursos supervisados</label>
-                                <input type="number" min="0" step="1" class="form-control" id="n" name="n"
-                                       aria-describedby="numberHelp" placeholder="Ingresa un número de cursos (n)" required>
-                                <small id="numberHelp" class="form-text text-muted">Un número entero positivo.</small>
+                                <input type="number" min="0" step="1" class="form-control" id="n1" name="n1"
+                                       aria-describedby="number1Help" placeholder="Mínimo de cursos (n1)" required>
+                                <small id="number1Help" class="form-text text-muted">Un número entero positivo.</small>
                             </div>
 
                             <!-- Numero maximo de cursos (n2) -->
                             <div class="form-group">
                                 <label for="n2">Cantidad máxima de cursos supervisados</label>
-                                <input type="number" min="0" step="1" class="form-control" id="n" name="n"
-                                       aria-describedby="numberHelp" placeholder="Ingresa un número de cursos (n)" required>
-                                <small id="numberHelp" class="form-text text-muted">Un número entero positivo.</small>
+                                <input type="number" min="0" step="1" class="form-control" id="n2" name="n2"
+                                       aria-describedby="number2Help" placeholder="Máximo de cursos (n2)" required>
+                                <small id="number2Help" class="form-text text-muted">Un número entero positivo mayor o igual al anterior.</small>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Enviar</button>

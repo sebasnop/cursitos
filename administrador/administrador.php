@@ -19,6 +19,10 @@
         para mas informacio : https://fontawesome.com/start-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
             integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+        <!-- Favicon: Icono de la pestana del navegador -->
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
     </head>
 
     <body>
@@ -26,7 +30,13 @@
         <header>
 
             <!--Barra de navegacion-->
-            <nav class="navbar">
+            <nav class="navbar navbar-light bg-white">
+
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="Logo Cursitos">
+                    Cursitos
+                </a>
+
                 <ul class="nav nav-pills">
                     <li class="nav-item">
                         <a class="nav-link " href="../index.html">Inicio</a>
@@ -56,7 +66,7 @@
 
         </header>
 
-        <div class="container mt-3">
+        <div class="container my-3 mx-5">
             <div class="row">
                 <?php
                     if(isset($_GET["nombre_usuario"])){

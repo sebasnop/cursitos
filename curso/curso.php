@@ -22,6 +22,9 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
+        <!-- Favicon: Icono de la pestana del navegador -->
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
     </head>
 
     <body>
@@ -29,7 +32,13 @@
         <header>
 
             <!--Barra de navegacion-->
-            <nav class="navbar">
+            <nav class="navbar navbar-light bg-white">
+
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="Logo Cursitos">
+                    Cursitos
+                </a>
+
                 <ul class="nav nav-pills">
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html">Inicio</a>
@@ -58,7 +67,7 @@
 
         </header>
 
-        <div class="container mt-3">
+        <div class="container my-3 mx-5">
             <div class="row">
                 <?php
                     if(isset($_GET["codigo"])){
