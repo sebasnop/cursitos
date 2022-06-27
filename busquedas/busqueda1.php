@@ -66,6 +66,11 @@
                                 require('../configuraciones/conexion.php');
 
                                 if($n != 0){
+
+                                    // Si se buscan los que SI ensenian cursos ($n != 0)
+                                    // se realiza un conteo de cursos por profe en el rango [f1,f2]
+                                    // y se muestran los del conteo = n
+
                                     $query="SELECT nombre_usuario, correo 
                                             FROM profesor 
                                             WHERE nombre_usuario IN (
@@ -73,13 +78,18 @@
                                                 FROM (
                                                     SELECT codigo, profesor_ensenia
                                                     FROM curso
-                                                    WHERE (fecha_publicacion >= '$f1' AND fecha_publicacion <= '$f2')
+                                                    WHERE (fecha_publicacion >= '$f1' AND fecha_publicacion <= '$f2' AND profesor_ensenia IS NOT NULL)
                                                 ) AS cursosIntervalo
                                                 GROUP BY profesor_ensenia
                                                 HAVING COUNT(codigo) = '$n'
                                              )";
-                                }
-                                else{
+
+                                } else {
+
+                                    // Si se buscan los que NO ensenian cursos ($n = 0)
+                                    // se buscan los profes que SI ensenian cursos en el intervalo [f1,f2]
+                                    // y se muestran los que NO esten en dicha busqueda
+
                                     $query="SELECT nombre_usuario, correo 
                                             FROM profesor 
                                             WHERE nombre_usuario NOT IN (
@@ -87,12 +97,13 @@
                                                 FROM (
                                                     SELECT codigo, profesor_ensenia
                                                     FROM curso
-                                                    WHERE (fecha_publicacion >= '$f1' AND fecha_publicacion <= '$f2')
+                                                    WHERE (fecha_publicacion >= '$f1' AND fecha_publicacion <= '$f2' AND profesor_ensenia IS NOT NULL)
                                                 ) AS cursosIntervalo
                                                 GROUP BY profesor_ensenia
                                              )";
                                 }
 
+                                // Se manda la consulta para obtener el resultado
                                 $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 
                                 if($result){

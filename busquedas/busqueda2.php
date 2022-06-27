@@ -48,6 +48,79 @@
                         que han supervisado entre <strong> <?=$n1;?> </strong> y <strong> <?=$n2;?> </strong> cursos.
                     </p>
 
+                    <table class="table table-striped table-dark mb-5">
+
+                        <thead>
+                        <tr>
+                            <th scope="col">Nombre de usuario</th>
+                            <th scope="col">Nombre completo</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+
+                        <?php
+
+                        // Se establece la conexión con la BD
+                        require('../configuraciones/conexion.php');
+
+                        if($n1 != 0){
+
+                            $query="SELECT nombre_usuario, nombre_completo 
+                                            FROM administrador 
+                                            WHERE nombre_usuario IN (
+                                                SELECT admin_supervisa AS nombre_usuario
+                                                FROM curso
+                                                WHERE admin_supervisa IS NOT NULL
+                                                GROUP BY admin_supervisa
+                                                HAVING (COUNT(codigo) >= '$n1' AND COUNT(codigo) <= '$n2')
+                                             )";
+
+                        } else {
+
+                            $query="SELECT nombre_usuario, nombre_completo 
+                                            FROM administrador 
+                                            WHERE (
+                                                nombre_usuario IN (
+                                                    SELECT admin_supervisa AS nombre_usuario
+                                                    FROM curso
+                                                    WHERE admin_supervisa IS NOT NULL 
+                                                    GROUP BY admin_supervisa
+                                                    HAVING (COUNT(codigo) >= '$n1' AND COUNT(codigo) <= '$n2')
+                                                )
+                                            ) OR (
+                                                nombre_usuario NOT IN (
+                                                    SELECT admin_supervisa AS nombre_usuario
+                                                    FROM curso
+                                                    WHERE admin_supervisa IS NOT NULL
+                                                    GROUP BY admin_supervisa
+                                                )
+                                            )";
+                        }
+
+                        // Se manda la consulta para obtener el resultado
+                        $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
+
+                        if($result){
+                            foreach($result as $fila){
+                                ?>
+
+                                <tr>
+                                    <td><?=$fila['nombre_usuario'];?></td>
+                                    <td><?=$fila['nombre_completo'];?></td>
+                                </tr>
+
+                                <?php
+                            }
+                        } else {
+                            echo "Ha ocurrido un error al buscar, intenta de nuevo";
+                        }
+                        ?>
+
+                        </tbody>
+
+                    </table>
+
                 <!-- Si los numeros NO fueron ingresados correctamente entonces NO se realiza la busqueda -->
                 <?php
                 } else {
@@ -58,12 +131,12 @@
                         <p>El número máximo de cursos supervisados debe ser mayor o igual al mínimo. Vuelve a intentarlo.</p>
                     </div>
 
-                    <button type="button" class="btn btn-primary btn-lg btn-block"
-                            onclick="window.location.href='../busquedas/busquedas.php';">Volver</button>
-
                 <?php
                 }
                 ?>
+
+                <button type="button" class="btn btn-secondary btn-lg btn-block"
+                        onclick="window.location.href='../busquedas/busquedas.php';">Volver</button>
 
             <div>
 
