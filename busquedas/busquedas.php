@@ -100,10 +100,10 @@
                             <div class="form-group">
                                 <label for="f2">Fecha final</label>
                                 <input type="date" class="form-control" id="f2" name="f2" aria-describedby="date2Help" required>
-                                <small id="date2Help" class="form-text text-muted">Ultimo día en el cuál se buscarán cursos, posterior al anterior (f2).</small>
+                                <small id="date2Help" class="form-text text-muted">Ultimo día en el cuál se buscarán cursos (f2), posterior o igual al anterior.</small>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button type="submit" class="btn btn-primary">Realizar búsqueda 1</button>
                         </form>
 
                     </div>
@@ -118,7 +118,7 @@
 
                         <p class="text-justify">
                             Visualice el nombre de usuario y el nombre completo de los administradores
-                            que han supervisado entre [<strong>n1</strong>, <strong>n2</strong>] cantidad de cursos.
+                            que han supervisado entre [<strong>n1</strong> , <strong>n2</strong>] cantidad de cursos.
                         </p>
 
                         <form action="busqueda2.php" method="POST">
@@ -127,19 +127,19 @@
                             <div class="form-group">
                                 <label for="n1">Cantidad mínima de cursos supervisados</label>
                                 <input type="number" min="0" step="1" class="form-control" id="n1" name="n1"
-                                       aria-describedby="number1Help" placeholder="Mínimo de cursos (n1)" required>
-                                <small id="number1Help" class="form-text text-muted">Un número entero positivo.</small>
+                                       aria-describedby="number1Help" placeholder="Mínimo de cursos" required>
+                                <small id="number1Help" class="form-text text-muted">Un número entero positivo (n1).</small>
                             </div>
 
                             <!-- Numero maximo de cursos (n2) -->
                             <div class="form-group">
                                 <label for="n2">Cantidad máxima de cursos supervisados</label>
                                 <input type="number" min="0" step="1" class="form-control" id="n2" name="n2"
-                                       aria-describedby="number2Help" placeholder="Máximo de cursos (n2)" required>
-                                <small id="number2Help" class="form-text text-muted">Un número entero positivo mayor o igual al anterior.</small>
+                                       aria-describedby="number2Help" placeholder="Máximo de cursos" required>
+                                <small id="number2Help" class="form-text text-muted">Un número entero positivo (n2) mayor o igual al anterior.</small>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button type="submit" class="btn btn-primary">Realizar búsqueda 2</button>
                         </form>
 
                     </div>

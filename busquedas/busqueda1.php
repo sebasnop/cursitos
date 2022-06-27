@@ -25,13 +25,46 @@
     <body>
 
         <main>
+
+            <?php
+                $n = $_POST["n"];
+                $f1 = $_POST["f1"];
+                $f2 = $_POST["f2"];
+            ?>
+
             <div class="container my-5">
+
                 <h1>Búsqueda 1</h1>
+
+                <?php
+                    if($f1 <= $f2){
+                ?>
+
+                        <p class="text-justify">
+                            Visualice el nombre de usuario y el correo electrónico de los profesores
+                            que han enseñado <strong> <?=$n;?> </strong> cursos en el rango de fechas
+                            [<strong> <?=$f1;?> </strong>, <strong> <?=$f2;?> </strong>].
+                        </p>
+
+                <?php
+                    } else {
+                ?>
+
+                    <div class="alert alert-danger" role="alert">
+                        <h4 class="alert-heading">¡Lo sentimos!</h4>
+                        <p>La fecha final debe ser igual o posterior a la inicial. Vuelve a intentarlo.</p>
+                    </div>
+
+                        <button type="button" class="btn btn-primary btn-lg btn-block"
+                                onclick="window.location.href='../busquedas/busquedas.php';">Volver</button>
+
+                <?php
+                }
+                ?>
 
             <div>
         </main>
 
-        <?php ?>
     </body>
 
 </html>

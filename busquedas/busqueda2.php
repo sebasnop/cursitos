@@ -24,7 +24,46 @@
 
     <body>
 
-        <?php ?>
+        <main>
+
+            <?php
+                $n1 = $_POST["n1"];
+                $n2 = $_POST["n2"];
+            ?>
+
+            <div class="container my-5">
+
+                <h1>Búsqueda 1</h1>
+
+                <?php
+                if($n1 <= $n2){
+                    ?>
+
+                    <p class="text-justify">
+                        Visualice el nombre de usuario y el nombre completo de los administradores
+                        que han supervisado entre <strong> <?=$n1;?> </strong> y <strong> <?=$n2;?> </strong> cursos.
+                    </p>
+
+                    <?php
+                } else {
+                    ?>
+
+                    <div class="alert alert-danger" role="alert">
+                        <h4 class="alert-heading">¡Lo sentimos!</h4>
+                        <p>El número máximo de cursos supervisados debe ser mayor o igual al mínimo. Vuelve a intentarlo.</p>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-lg btn-block"
+                            onclick="window.location.href='../busquedas/busquedas.php';">Volver</button>
+
+                    <?php
+                }
+                ?>
+
+            <div>
+
+        </main>
+
     </body>
 
 </html>
