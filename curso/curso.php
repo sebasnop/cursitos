@@ -231,7 +231,7 @@
                                         if($result){
                                             foreach ($result as $fila){
                                         ?>
-                                                <option value="<?=$fila['nombre_usuario'];?>"  ><b>Usurio:</b> <?=$fila['nombre_usuario'];?> </option>
+                                                <option value="<?=$fila['nombre_usuario'];?>"  ><b>Usuario:</b> <?=$fila['nombre_usuario'];?> </option>
                                         <?php
                                             }
                                         }
