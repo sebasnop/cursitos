@@ -51,40 +51,62 @@
             </nav>
         </header>
 
+        <!-- Parte principal -->
         <main>
 
-            <div class="container">
-                <div class="row my-2">
-                    <div class="col-6">
-                        <p>Para realizar una busqueda de facturas primero selecciona y llena los parametros de la busqueda.</p>
-                        <form action="buscar.php" target="_blank"  method="POST">
+            <!-- my-3 es "margin" en eje "y" (Top & Bottom) de 3 -->
+            <div class="container my-5">
+
+                <h1>Busquedas</h1>
+
+                <section class="row my-3 py-3 bg-white">
+
+                    <div class="col-8">
+
+                        <h3>Busqueda 1</h3>
+
+                        <p>
+                            Busque los profesores que han enseñado <strong>n</strong> cursos en el rango de fechas [<strong>f1</strong>, <strong>f2</strong>]
+                        </p>
+
+                        <form action="busquedas.php" method="GET">
+
+                            <!-- Numero de cursos (n) -->
                             <div class="form-group">
-                                <label for="">Parametros:</label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                        value="comprador" checked>
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        Identificacion del Comprador
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
-                                        value="factura">
-                                    <label class="form-check-label" for="exampleRadios2">
-                                        Codigo de la Factura
-                                    </label>
-                                </div>
+                                <label for="n">Número de cursos</label>
+                                <input type="number" min="0" step="1" class="form-control" id="n" name="n"
+                                       aria-describedby="numberHelp" placeholder="Ingresa un número de cursos (n)" required>
+                                <small id="numberHelp" class="form-text text-muted">Un número entero positivo.</small>
                             </div>
-                            <div class="input-group ">
-                                <input type="text" name="identificacion" id="identificacion" class="form-control">
-                                <button class="btn  btn-primary"  title="Buscar" type="submit">
-                                    <i class="fas fa-search-plus mx-0 my-0"> </i></button>
+
+                            <!-- Fecha inicial (f1) -->
+                            <div class="form-group">
+                                <label for="f1">Fecha inicial (f1)</label>
+                                <input type="date" class="form-control" id="f1" name="f1" aria-describedby="date1Help" required>
+                                <small id="date1Help" class="form-text text-muted">Primer día en el cuál se buscarán cursos.</small>
                             </div>
+
+                            <!-- Fecha final (f2) -->
+                            <div class="form-group">
+                                <label for="f2">Fecha final</label>
+                                <input type="date" class="form-control" id="f2" name="f2" aria-describedby="date2Help" required>
+                                <small id="date2Help" class="form-text text-muted">Ultimo día en el cuál se buscarán cursos.</small>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Enviar</button>
                         </form>
+
                     </div>
 
+                </section>
+
+                <div class="row my-3">
+
+
                 </div>
+
             </div>
+
         </main>
 
     </body>
