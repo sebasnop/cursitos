@@ -25,17 +25,20 @@
     <body>
 
         <main>
-
+            <!-- Se inicializan los parametros que vienen del formulario
+                 para ser usados en el programa -->
             <?php
                 $n = $_POST["n"];
                 $f1 = $_POST["f1"];
                 $f2 = $_POST["f2"];
             ?>
 
+            <!-- En este contenedor se mostrara el contenido. Margen de 5 en el eje y -->
             <div class="container my-5">
 
                 <h1>Búsqueda 1</h1>
 
+                <!-- Si las fechas fueron ingresadas correctamente entonces se realiza la busqueda -->
                 <?php
                     if($f1 <= $f2){
                 ?>
@@ -46,6 +49,75 @@
                             [<strong> <?=$f1;?> </strong>, <strong> <?=$f2;?> </strong>].
                         </p>
 
+                        <table class="table table-striped table-dark mb-5">
+
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nombre de usuario</th>
+                                    <th scope="col">Correo electrónico</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                            <?php
+
+                                // Se establece la conexión con la BD
+                                require('../configuraciones/conexion.php');
+
+                                if($n != 0){
+                                    $query="SELECT nombre_usuario, correo 
+                                            FROM profesor 
+                                            WHERE nombre_usuario IN (
+                                                SELECT profesor_ensenia AS nombre_usuario
+                                                FROM (
+                                                    SELECT codigo, profesor_ensenia
+                                                    FROM curso
+                                                    WHERE (fecha_publicacion >= '$f1' AND fecha_publicacion <= '$f2')
+                                                ) AS cursosIntervalo
+                                                GROUP BY profesor_ensenia
+                                                HAVING COUNT(codigo) = '$n'
+                                             )";
+                                }
+                                else{
+                                    $query="SELECT nombre_usuario, correo 
+                                            FROM profesor 
+                                            WHERE nombre_usuario NOT IN (
+                                                SELECT profesor_ensenia AS nombre_usuario
+                                                FROM (
+                                                    SELECT codigo, profesor_ensenia
+                                                    FROM curso
+                                                    WHERE (fecha_publicacion >= '$f1' AND fecha_publicacion <= '$f2')
+                                                ) AS cursosIntervalo
+                                                GROUP BY profesor_ensenia
+                                             )";
+                                }
+
+                                $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
+
+                                if($result){
+                                    foreach($result as $fila){
+                            ?>
+
+                                <tr>
+                                    <td><?=$fila['nombre_usuario'];?></td>
+                                    <td><?=$fila['correo'];?></td>
+                                </tr>
+
+                            <?php
+                                    }
+                                } else {
+                                    echo "Ha ocurrido un error al buscar, intenta de nuevo";
+                                }
+                            ?>
+
+                            </tbody>
+
+                        </table>
+
+                        <hr class="mb-4">
+
+                <!-- Si las fechas NO fueron ingresadas correctamente entonces NO se realiza la busqueda -->
                 <?php
                     } else {
                 ?>
@@ -55,12 +127,12 @@
                         <p>La fecha final debe ser igual o posterior a la inicial. Vuelve a intentarlo.</p>
                     </div>
 
-                        <button type="button" class="btn btn-primary btn-lg btn-block"
-                                onclick="window.location.href='../busquedas/busquedas.php';">Volver</button>
-
                 <?php
                 }
                 ?>
+
+                <button type="button" class="btn btn-secondary btn-lg btn-block mt-5"
+                        onclick="window.location.href='../busquedas/busquedas.php';">Volver</button>
 
             <div>
         </main>

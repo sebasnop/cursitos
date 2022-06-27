@@ -26,27 +26,32 @@
 
         <main>
 
+            <!-- Se inicializan los parametros que vienen del formulario
+                 para ser usados en el programa -->
             <?php
                 $n1 = $_POST["n1"];
                 $n2 = $_POST["n2"];
             ?>
 
+            <!-- En este contenedor se mostrara el contenido. Margen de 5 en el eje y -->
             <div class="container my-5">
 
-                <h1>Búsqueda 1</h1>
+                <h1>Búsqueda 2</h1>
 
+                <!-- Si los numeros fueron ingresados correctamente entonces se realiza la busqueda -->
                 <?php
                 if($n1 <= $n2){
-                    ?>
+                ?>
 
                     <p class="text-justify">
                         Visualice el nombre de usuario y el nombre completo de los administradores
                         que han supervisado entre <strong> <?=$n1;?> </strong> y <strong> <?=$n2;?> </strong> cursos.
                     </p>
 
-                    <?php
+                <!-- Si los numeros NO fueron ingresados correctamente entonces NO se realiza la busqueda -->
+                <?php
                 } else {
-                    ?>
+                ?>
 
                     <div class="alert alert-danger" role="alert">
                         <h4 class="alert-heading">¡Lo sentimos!</h4>
@@ -56,7 +61,7 @@
                     <button type="button" class="btn btn-primary btn-lg btn-block"
                             onclick="window.location.href='../busquedas/busquedas.php';">Volver</button>
 
-                    <?php
+                <?php
                 }
                 ?>
 
