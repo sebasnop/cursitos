@@ -59,14 +59,14 @@
 
                 <h1>Busquedas</h1>
 
-                <section class="row my-3 py-3 bg-white">
-
-                    <div class="col-8">
+                <section class="row my-3 py-3">
+                    <div class="container col-8">
 
                         <h3>Busqueda 1</h3>
 
-                        <p>
-                            Busque los profesores que han enseñado <strong>n</strong> cursos en el rango de fechas [<strong>f1</strong>, <strong>f2</strong>]
+                        <p class="text-justify">
+                            Visualice el nombre de usuario y el correo electrónico de los profesores
+                            que han enseñado <strong>n</strong> cursos en el rango de fechas [<strong>f1</strong>, <strong>f2</strong>].
                         </p>
 
                         <form action="busquedas.php" method="GET">
@@ -81,29 +81,59 @@
 
                             <!-- Fecha inicial (f1) -->
                             <div class="form-group">
-                                <label for="f1">Fecha inicial (f1)</label>
+                                <label for="f1">Fecha inicial</label>
                                 <input type="date" class="form-control" id="f1" name="f1" aria-describedby="date1Help" required>
-                                <small id="date1Help" class="form-text text-muted">Primer día en el cuál se buscarán cursos.</small>
+                                <small id="date1Help" class="form-text text-muted">Primer día en el cuál se buscarán cursos (f1).</small>
                             </div>
 
                             <!-- Fecha final (f2) -->
                             <div class="form-group">
                                 <label for="f2">Fecha final</label>
                                 <input type="date" class="form-control" id="f2" name="f2" aria-describedby="date2Help" required>
-                                <small id="date2Help" class="form-text text-muted">Ultimo día en el cuál se buscarán cursos.</small>
+                                <small id="date2Help" class="form-text text-muted">Ultimo día en el cuál se buscarán cursos (f2).</small>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </form>
 
                     </div>
-
                 </section>
 
-                <div class="row my-3">
+                <hr class="mb-4">
 
+                <section class="row my-3 py-3">
+                    <div class="container col-8">
 
-                </div>
+                        <h3>Busqueda 2</h3>
+
+                        <p class="text-justify">
+                            Visualice el nombre de usuario y el nombre completo de los administradores
+                            que han supervisado entre [<strong>n1</strong>, <strong>n2</strong>] cantidad de cursos.
+                        </p>
+
+                        <form action="busquedas.php" method="GET">
+
+                            <!-- Numero minimo de cursos (n1) -->
+                            <div class="form-group">
+                                <label for="n1">Cantidad mínima de cursos supervisados</label>
+                                <input type="number" min="0" step="1" class="form-control" id="n" name="n"
+                                       aria-describedby="numberHelp" placeholder="Ingresa un número de cursos (n)" required>
+                                <small id="numberHelp" class="form-text text-muted">Un número entero positivo.</small>
+                            </div>
+
+                            <!-- Numero maximo de cursos (n2) -->
+                            <div class="form-group">
+                                <label for="n2">Cantidad máxima de cursos supervisados</label>
+                                <input type="number" min="0" step="1" class="form-control" id="n" name="n"
+                                       aria-describedby="numberHelp" placeholder="Ingresa un número de cursos (n)" required>
+                                <small id="numberHelp" class="form-text text-muted">Un número entero positivo.</small>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+
+                    </div>
+                </section>
 
             </div>
 
