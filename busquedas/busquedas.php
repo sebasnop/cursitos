@@ -25,7 +25,7 @@
 
             <!--Barra de navegacion-->
             <nav class="navbar">
-                <ul class="nav">
+                <ul class="nav nav-pills">
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html">Inicio</a>
                     </li>
@@ -44,7 +44,7 @@
                         <a class="nav-link" href="../consultas/consultas.php">Consultas</a>
                     </li>
 
-                    <li class="nav-item nav-pills">
+                    <li class="nav-item">
                         <a class="nav-link active" href="busquedas.php">Busquedas</a>
                     </li>
                 </ul>

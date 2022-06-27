@@ -30,7 +30,7 @@
 
             <!--Barra de navegacion-->
             <nav class="navbar">
-                <ul class="nav">
+                <ul class="nav nav-pills">
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html">Inicio</a>
                     </li>
@@ -42,7 +42,7 @@
                         <a class="nav-link"  href="../profesor/profesor.php">Profesor</a>
                     </li>
 
-                    <li class="nav-pills">
+                    <li class="nav-item">
                         <a class="nav-link active" href="curso.php">Curso</a>
                     </li>
 

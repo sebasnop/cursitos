@@ -27,7 +27,7 @@
 
             <!--Barra de navegacion-->
             <nav class="navbar">
-                <ul class="nav">
+                <ul class="nav nav-pills">
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html">Inicio</a>
                     </li>
@@ -35,7 +35,7 @@
                         <a class="nav-link" href="../administrador/administrador.php">Administrador</a>
                     </li>
 
-                    <li class="nav-item nav-pills">
+                    <li class="nav-item">
                         <a class="nav-link active"  href="profesor.php">Profesor</a>
                     </li>
 
