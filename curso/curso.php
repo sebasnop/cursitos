@@ -1,6 +1,6 @@
 <!-- En esta pagina puede encontrar mas informacion acerca de la estructura de un documento html 
     http://www.iuma.ulpgc.es/users/jmiranda/docencia/Tutorial_HTML/estruct.htm-->
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="es">
 
     <!--cabezera del html -->
@@ -70,7 +70,7 @@
         <div class="container my-3 mx-5">
             <div class="row">
                 <?php
-                    if(isset($_GET["codigo"])){
+                    if(isset($_GET["codigo"])){ 
                 ?>
                 <div class="col-6 px-2">
                     <div class="card">
@@ -121,7 +121,7 @@
                                 <label for="">Administrador</label>
                                 <input type="text" name="admin_supervisa" id="admin_supervisa" class="form-control">
                             </div>
-                            <div id="cupos" class="form-group">
+                            <div id="cupos1" class="form-group">
                                 <label for="">Cupos </label>
                                 <input type="text" name="cupos" id="cupos" class="form-control">
                             </div>
@@ -134,7 +134,7 @@
                                 <input type="text" name="duracion_estimada" id="duracion_estimada" class="form-control">
                             </div>
                             <script>
-                                $("#cupos").hide();
+                                $("#cupos1").hide();
                                 $("#fechafin").hide();
                                 $("#duracion").hide();
                             </script>
@@ -142,11 +142,11 @@
                                     function cambioTipo(select) {
                                         if(select.value==="SINCRONICO"){
                                             $("#duracion").hide();
-                                            $("#cupos").show();
+                                            $("#cupos1").show();
                                             $("#fechafin").show();
                                         }
                                         else if(select.value==="ASINCRONICO"){
-                                            $("#cupos").hide();
+                                            $("#cupos1").hide();
                                             $("#fechafin").hide();
                                             $("#duracion").show();
                                         }
@@ -209,7 +209,8 @@
                             <div class="form-group">
                                     <label for="">Profesor</label>
                                     <select name="profesor_ensenia" id="profesor_ensenia" multiple class="form-control" id="exampleFormControlSelect2">
-                                        <?php
+                                    <option value=NULL>NULL</option>
+                                    <?php
                                         require('select_p.php');
                                         if($result){
                                             foreach ($result as $fila){
@@ -224,7 +225,8 @@
                             <div class="form-group">
                                     <label for="">Administrador</label>
                                     <select name="admin_supervisa" id="admin_supervisa" multiple class="form-control" id="exampleFormControlSelect3">
-                                        <?php
+                                    <option value=NULL>NULL</option>
+                                    <?php
                                         require('select_a.php');
                                         if($result){
                                             foreach ($result as $fila){
@@ -237,9 +239,9 @@
                                     </select>
                             </div>
 
-                            <div id="cupos" class="form-group">
+                            <div id="cupos1" class="form-group">
                                 <label for="">Cupos</label>
-                                <input type="text" name="cupos}" id="cupos" class="form-control">
+                                <input type="text" name="cupos" id="cupos" class="form-control">
                             </div>
                             <div id="fechafin" class="form-group">
                                 <label for="">Fecha de finalización</label>
@@ -250,7 +252,7 @@
                                 <input type="text" name="duracion_estimada" id="duracion_estimada" class="form-control">
                             </div>
                             <script>
-                                $("#cupos").hide();
+                                $("#cupos1").hide();
                                 $("#fechafin").hide();
                                 $("#duracion").hide();
                             </script>
@@ -258,11 +260,11 @@
                                     function cambioTipo(select) {
                                         if(select.value==="SINCRONICO"){
                                             $("#duracion").hide();
-                                            $("#cupos").show();
+                                            $("#cupos1").show();
                                             $("#fechafin").show();
                                         }
                                         else if(select.value==="ASINCRONICO"){
-                                            $("#cupos").hide();
+                                            $("#cupos1").hide();
                                             $("#fechafin").hide();
                                             $("#duracion").show();
                                         }

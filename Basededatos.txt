@@ -45,7 +45,6 @@ CREATE TABLE curso
 
 
 
-    //////////administrador: nombre_usuario(CP), clave, nombre_completo, correo, hoja_de_vida, capacidad///////// 
 INSERT INTO administrador VALUES ('admin1','claveadmin1','admin1 perez','admin1@cursitos.com','www.hojadevida.com/admin1', 35);
 INSERT INTO administrador VALUES ('admin2','claveadmin2','admin2 lopez','admin2@cursitos.com','www.hojadevida.com/admin2', 100);
 INSERT INTO administrador VALUES ('admin3','claveadmin2','admin3 castro','admin3@cursitos.com','www.hojadevida.com/admin3', 43);
@@ -53,7 +52,6 @@ INSERT INTO administrador VALUES ('admin4','claveadmin4','admin3 castro','admin4
 INSERT INTO administrador VALUES ('admin5','claveadmin5','admin5 villa','admin5@cursitos.com','www.hojadevida.com/admin5', 100);
 INSERT INTO administrador VALUES ('admin6','claveadmin6','admin6 caro','admin6@cursitos.com','www.hojadevida.com/admin6', 80);
 INSERT INTO administrador VALUES ('admin7','claveadmin7','admin7 pino','admin7@cursitos.com','www.hojadevida.com/admin7', 23);
-/////////ADMINISTRADOR ESTÁ BIENNNNNN/////////
 
 INSERT INTO profesor VALUES ('profe1','claveprofe1','profe perez','profe1@cursitos.com','www.hojadevida.com/profe1','admin3');
 INSERT INTO profesor VALUES ('profe2','claveprofe2','profe vera','profe2@cursitos.com','www.hojadevida.com/profe2', 'admin7');
@@ -61,16 +59,15 @@ INSERT INTO profesor VALUES ('profe3','claveprofe3','profe vera','profe3@cursito
 INSERT INTO profesor VALUES ('profe4','claveprofe4','profe cano','profe4@cursitos.com','www.hojadevida.com/profe4','admin1');
 INSERT INTO profesor VALUES ('profe5','claveprofe4','profe velez','profe5@cursitos.com','www.hojadevida.com/profe5','admin4');
 INSERT INTO profesor VALUES ('profe6','claveprofe4','profe rios','profe6@cursitos.com','www.hojadevida.com/profe6', 'admin6');
-///////// EN PROFESOR SE DEBE ARREGLAR LO DE LOS NULL PQ LOS ESTÁ TOMANDO COMO VALORES /////////
 
 
-INSERT INTO curso VALUES (1, 'php', 'web', 'muy bueno', 10, DATE('2022-02-02'), 'SINCRONICO', 'profe1', NULL, 11, DATE('2023-01-01'), NULL);
-INSERT INTO curso VALUES (2, 'php2', 'web', 'más bueno', 350, DATE('2022-03-02'), 'SINCRONICO', 'profe2', 'admin3', 350, DATE('2023-03-01'), NULL);
-INSERT INTO curso VALUES (3, 'php3', 'web', 'maluquito', 10, DATE('2022-04-02'), 'SINCRONICO', 'profe4', 'admin5', 60, DATE('2023-01-01'), NULL);
-INSERT INTO curso VALUES (4, 'html', 'web', 'nice', 10, DATE('2022-04-02'), 'ASINCRONICO', 'profe3', 'admin6', NULL, NULL, 5);
-INSERT INTO curso VALUES (5, 'html2', 'web', 'the best', 6, DATE('2022-03-02'), 'ASINCRONICO', 'profe1', 'admin5', NULL, NULL, 6);
-INSERT INTO curso VALUES (6, 'html3', 'web', 'zzz', 350, DATE('2022-05-02'), 'ASINCRONICO', 'profe2', 'admin7', NULL, NULL, 7);
-INSERT INTO curso VALUES (7, 'html4', 'web', 'interesante', 350, DATE('2022-05-02'), 'ASINCRONICO', 'profe2', 'admin1', NULL, NULL, 14);
+INSERT INTO curso VALUES (1, 'php', 'web', 'principios php', 10, DATE('2022-02-02'), 'SINCRONICO', 'profe1', NULL, 11, DATE('2023-01-01'), NULL);
+INSERT INTO curso VALUES (2, 'php2', 'web', 'php intermedio', 350, DATE('2022-03-02'), 'SINCRONICO', 'profe2', 'admin3', 350, DATE('2023-03-01'), NULL);
+INSERT INTO curso VALUES (3, 'php3', 'web', 'php avanzado', 10, DATE('2022-04-02'), 'SINCRONICO', 'profe4', 'admin5', 60, DATE('2023-01-01'), NULL);
+INSERT INTO curso VALUES (4, 'html', 'web', 'principios html', 10, DATE('2022-04-02'), 'ASINCRONICO', 'profe3', 'admin6', NULL, NULL, 5);
+INSERT INTO curso VALUES (5, 'html2', 'web', 'html básico', 6, DATE('2022-03-02'), 'ASINCRONICO', 'profe1', 'admin5', NULL, NULL, 6);
+INSERT INTO curso VALUES (6, 'html3', 'web', 'html intermedio', 350, DATE('2022-05-02'), 'ASINCRONICO', 'profe2', 'admin7', NULL, NULL, 7);
+INSERT INTO curso VALUES (7, 'html4', 'web', 'html avanzado', 350, DATE('2022-05-02'), 'ASINCRONICO', 'profe2', 'admin1', NULL, NULL, 14);
 
 INSERT INTO curso VALUES (8, 'inglés', 'idiomas', 'curso de inglés básico', 300, DATE('2022-02-02'), 'ASINCRONICO', 'profe4', 'admin1', NULL, NULL, 100);
 
@@ -78,6 +75,3 @@ INSERT INTO curso VALUES (8, 'inglés', 'idiomas', 'curso de inglés básico', 3
 
 
 
-////////////////////////////////////////////////////////
-
- INSERT INTO profesor VALUES ('profe2','claveprofe2','profe vera','profe2@cursitos.com','www.hojadevida.com/profe2', NULL);
