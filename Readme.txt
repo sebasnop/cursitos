@@ -1,10 +1,11 @@
-Para probar este ejemplo deben seguir los siguientes pasos:
-1. instalar el wamp,xamp o uwamp server, ejecutarlo y que todos los servicios esten activos
-2. copiar esta carpeta clase a la carpeta WWW que se encuentra en la carpeta donde esta instalado el Wamp server
-3. deben crear un usuario y una bd en mysql, y actualizar dentro de la carpeta configuraciones el archivo
-   conexion con los datos de su usuario y bd.
-4. se debe ejecutar el script Basededatos.txt en la base de datos que crearon.
+Para un correcto funcionamiento:
 
-Preguntas: escribir al correo, ir a monitorias o escribir al +57 3157901082
-
-Mucha suerte en sus trabajos.
+1. Crear un usuario en phpmyadmin con
+	Nombre de usuario: Cursitos
+	Contraseña: cursitos
+	Nombre de host: Local
+	Todos los privilegios
+   o crear otro usuario y cambiar los campos en configuraciones/conexion.php
+2. Crear una base de datos de nombre cursitos y utf8_spanish_ci o crear una base de datos con otro nombre y cambiar en configuraciones/conexion.php
+3. Dentro de la base de datos ejecutrar el script de "Basesdedatos.txt" en la pestaña SQL.
+4. Ejecutar desde localhost/cursitos
