@@ -77,32 +77,32 @@
                             Editar Profesor
                         </div>
                         <div class="card-body">
-                            <!--formulario para insertar una persona mediante el metodo post-->
+                            <!-- Actualizar -->
                             <form action="update_p.php" class="form-group" method="post">
                                 <div class="form-group">
                                     <label for="nombre_usuario">Usuario</label>
                                     <input type="text" readonly name="nombre_usuario" value=<?=$_GET["nombre_usuario"];?> id="nombre_usuario"
-                                        class="form-control">
+                                        class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Clave</label>
-                                    <input type="text" name="clave" value='<?=$_GET["clave"];?>' id="clave" class="form-control">
+                                    <input type="text" name="clave" value='<?=$_GET["clave"];?>' id="clave" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Nombre Completo</label>
-                                    <input type="text" name="nombre_completo" value='<?=$_GET["nombre_completo"];?>' id="nombre_completo" class="form-control">
+                                    <input type="text" name="nombre_completo" value='<?=$_GET["nombre_completo"];?>' id="nombre_completo" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Correo</label>
-                                    <input type="text" name="correo" value='<?=$_GET["correo"];?>' id="correo" class="form-control">
+                                    <input type="email" name="correo" value='<?=$_GET["correo"];?>' id="correo" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Link de hoja de vida</label>
-                                    <input type="text" name="hoja_de_vida" value=<?=$_GET["hoja_de_vida"];?> id="hoja_de_vida" class="form-control">
+                                    <input type="text" name="hoja_de_vida" value=<?=$_GET["hoja_de_vida"];?> id="hoja_de_vida" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Supervisor</label>
-                                    <select name="admin_supervisor" id="admin_supervisor" multiple class="form-control" id="exampleFormControlSelect3">
+                                    <select name="admin_supervisor" id="admin_supervisor" multiple class="form-control" id="exampleFormControlSelect3" required>
                                     <option value=NULL >NULL</option>
                                         <?php
                                         require('select_a.php');
@@ -134,31 +134,31 @@
                             Insertar Profesor
                             </div>
                     <div class="card-body">
-                        <!--formulario para insertar una persona mediante el metodo post-->
+                        <!-- Insertar -->
                         <form action="insert_p.php" class="form-group" method="post">
                             <div class="form-group">
                                 <label for="nombre_usuario">Usuario</label>
-                                <input type="text" name="nombre_usuario" id="nombre_usuario" class="form-control">
+                                <input type="text" name="nombre_usuario" id="nombre_usuario" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Clave</label>
-                                <input type="text" name="clave" id="clave" class="form-control">
+                                <input type="text" name="clave" id="clave" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Nombre Completo</label>
-                                <input type="text" name="nombre_completo" id="nombre_completo" class="form-control">
+                                <input type="text" name="nombre_completo" id="nombre_completo" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Correo</label>
-                                <input type="text" name="correo" id="correo" class="form-control">
+                                <input type="email" name="correo" id="correo" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Link de hoja de vida</label>
-                                <input type="text" name="hoja_de_vida" id="hoja_de_vida" class="form-control">
+                                <input type="text" name="hoja_de_vida" id="hoja_de_vida" class="form-control" required>
                             </div>
                             <div class="form-group">
                                     <label for="">Supervisor</label>
-                                    <select name="admin_supervisor" id="admin_supervisor" multiple class="form-control" id="exampleFormControlSelect3">
+                                    <select name="admin_supervisor" id="admin_supervisor" multiple class="form-control" id="exampleFormControlSelect3" required>
                                     <option value=NULL>NULL</option>
                                         <?php
                                         require('select_a.php');
@@ -219,7 +219,7 @@
                                 <td>
 
                                     <form action="delete_p.php" method="POST">
-                                        <input type="text" value=<?=$fila['nombre_usuario'];?> hidden>
+                                        <input type="text" value='<?=$fila['nombre_usuario'];?>' hidden>
                                         <input type="text" name="d" value='<?=$fila['nombre_usuario'];?>' hidden>
                                         <button class="btn btn-danger" title="eliminar" type="submit"><i
                                                 class="fas fa-trash-alt"></i></button>

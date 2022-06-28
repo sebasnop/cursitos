@@ -82,28 +82,28 @@
                             <form action="update_c.php" class="form-group" method="post">
                                 <div class="form-group">
                                     <label for="codigo">Codigo</label>
-                                    <input type="text" readonly name="codigo" value=<?=$_GET["codigo"];?> id="codigo"
-                                        class="form-control">
+                                    <input type="number" min="0" step="1" readonly name="codigo" value=<?=$_GET["codigo"];?> id="codigo"
+                                        class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Nombre</label>
-                                    <input type="text" name="nombre" value='<?=$_GET["nombre"];?>' id="nombre" class="form-control">
+                                    <input type="text" name="nombre" value='<?=$_GET["nombre"];?>' id="nombre" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Categoría</label>
-                                    <input type="text" name="categoria" value='<?=$_GET["categoria"];?>' id="categoria" class="form-control">
+                                    <input type="text" name="categoria" value='<?=$_GET["categoria"];?>' id="categoria" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Descripción</label>
-                                    <input type="text" name="descripcion" value=<?=$_GET["descripcion"];?> id="descripcion" class="form-control">
+                                    <input type="text" name="descripcion" value=<?=$_GET["descripcion"];?> id="descripcion" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Cantidad de estudiantes</label>
-                                    <input type="text" name="cantidad_estudiantes" value=<?=$_GET["cantidad_estudiantes"];?> id="cantidad_estudiantes" class="form-control">
+                                    <input type="number" min="0" step="1" max="350" name="cantidad_estudiantes" value=<?=$_GET["cantidad_estudiantes"];?> id="cantidad_estudiantes" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Fecha de publicación</label>
-                                    <input type="date" name="fecha_publicacion" value=<?=$_GET["fecha_publicacion"];?> id="fecha_publicacion" class="form-control">
+                                    <input type="date" min="2022-01-01" name="fecha_publicacion" value=<?=$_GET["fecha_publicacion"];?> id="fecha_publicacion" class="form-control">
                                 </div>
                                 <div  name="taskOption" class="form-group">
                                     <label for="exampleFormControlSelect2">Tipo</label>
@@ -176,32 +176,32 @@
                         <form action="insert_c.php" class="form-group" method="post">
                             <div class="form-group">
                                 <label for="codigo">Codigo</label>
-                                <input type="text" name="codigo" id="codigo" class="form-control">
+                                <input type="number" min="0" step="1" name="codigo" id="codigo" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Nombre</label>
-                                <input type="text" name="nombre" id="nombre" class="form-control">
+                                <input type="text" name="nombre" id="nombre" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Categoría</label>
-                                <input type="text" name="categoria" id="categoria" class="form-control">
+                                <input type="text" name="categoria" id="categoria" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Descripción</label>
-                                <input type="text" name="descripcion" id="descripcion" class="form-control">
+                                <input type="text" name="descripcion" id="descripcion" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Cantidad de estudiantes</label>
-                                <input type="text" name="cantidad_estudiantes" id="cantidad_estudiantes" class="form-control">
+                                <input type="number" min="0" step="1" max="350" name="cantidad_estudiantes" id="cantidad_estudiantes" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Fecha de publicación</label>
-                                <input type="date" name="fecha_publicacion" id="fecha_publicacion" class="form-control">
+                                <input type="date" min="2022-01-01" name="fecha_publicacion" id="fecha_publicacion" class="form-control">
 
                             </div>
                             <div  name="taskOption" class="form-group">
                                     <label for="exampleFormControlSelect2">Tipo</label>
-                                    <select class="form-control" onchange="cambioTipo(this)" name="tipo" id="exampleFormControlSelect2">
+                                    <select class="form-control" onchange="cambioTipo(this)" name="tipo" id="exampleFormControlSelect2" required>
                                     <option selected="true" disabled="disabled">Seleccione el tipo</option>
                                     <option value="SINCRONICO"> Sincrónico</option>
                                     <option value="ASINCRONICO">Asincrónico</option>
@@ -209,7 +209,7 @@
                             </div>
                             <div class="form-group">
                                     <label for="">Profesor</label>
-                                    <select name="profesor_ensenia" id="profesor_ensenia" multiple class="form-control" id="exampleFormControlSelect2">
+                                    <select name="profesor_ensenia" id="profesor_ensenia" multiple class="form-control" id="exampleFormControlSelect2" required>
                                     <option value=NULL>NULL</option>
                                     <?php
                                         require('select_p.php');
@@ -225,7 +225,7 @@
                             </div>
                             <div class="form-group">
                                     <label for="">Administrador</label>
-                                    <select name="admin_supervisa" id="admin_supervisa" multiple class="form-control" id="exampleFormControlSelect3">
+                                    <select name="admin_supervisa" id="admin_supervisa" multiple class="form-control" id="exampleFormControlSelect3" required>
                                     <option value=NULL>NULL</option>
                                     <?php
                                         require('select_a.php');
@@ -242,7 +242,7 @@
 
                             <div id="cupos1" class="form-group">
                                 <label for="">Cupos</label>
-                                <input type="text" name="cupos" id="cupos" class="form-control">
+                                <input type="number" min="0" step="1" max="350" name="cupos" id="cupos" class="form-control">
                             </div>
                             <div id="fechafin" class="form-group">
                                 <label for="">Fecha de finalización</label>
@@ -250,7 +250,7 @@
                             </div>
                             <div id="duracion" class="form-group">
                                 <label for="">Duración estimada</label>
-                                <input type="text" name="duracion_estimada" id="duracion_estimada" class="form-control">
+                                <input type="number" min="0" step="1" max="366"" name="duracion_estimada" id="duracion_estimada" class="form-control">
                             </div>
                             <script>
                                 $("#cupos1").hide();

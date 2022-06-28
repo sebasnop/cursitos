@@ -78,32 +78,33 @@
                             Editar Administrador
                         </div>
                         <div class="card-body">
-                            <!--formulario para insertar una persona mediante el metodo post-->
+
+                            <!-- Formulario para actualizar un administrador -->
                             <form action="update_a.php" class="form-group" method="post">
                                 <div class="form-group">
                                     <label for="nombre_usuario">Nombre de usuario</label>
                                     <input type="text" readonly name="nombre_usuario" value=<?=$_GET["nombre_usuario"];?> id="nombre_usuario"
-                                        class="form-control">
+                                        class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Clave</label>
-                                    <input type="text" name="clave" value='<?=$_GET["clave"];?>' id="clave" class="form-control">
+                                    <input type="text" name="clave" value='<?=$_GET["clave"];?>' id="clave" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Nombre Completo</label>
-                                    <input type="text" name="nombre_completo" value='<?=$_GET["nombre_completo"];?>' id="nombre_completo" class="form-control">
+                                    <input type="text" name="nombre_completo" value='<?=$_GET["nombre_completo"];?>' id="nombre_completo" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Correo</label>
-                                    <input type="text" name="correo" value='<?=$_GET["correo"];?>' id="correo" class="form-control">
+                                    <input type="email" name="correo" value='<?=$_GET["correo"];?>' id="correo" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Link de hoja de vida</label>
-                                    <input type="text" name="hoja_de_vida" value=<?=$_GET["hoja_de_vida"];?> id="hoja_de_vida" class="form-control">
+                                    <input type="text" name="hoja_de_vida" value=<?=$_GET["hoja_de_vida"];?> id="hoja_de_vida" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Capacidad de actividades</label>
-                                    <input type="text" name="capacidad" value=<?=$_GET["capacidad"];?> id="capacidad" class="form-control">
+                                    <input type="number" min="0" step="1" max="500" name="capacidad" value=<?=$_GET["capacidad"];?> id="capacidad" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" class="btn btn-primary" value="Guardar">
@@ -125,31 +126,31 @@
                             Insertar Administrador
                             </div>
                     <div class="card-body">
-                        <!--formulario para insertar una persona mediante el metodo post-->
+                        <!-- Insertar -->
                         <form action="insert_a.php" class="form-group" method="post">
                             <div class="form-group">
                                 <label for="nombre_usuario">Usuario</label>
-                                <input type="text" name="nombre_usuario" id="nombre_usuario" class="form-control">
+                                <input type="text" name="nombre_usuario" id="nombre_usuario" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Clave</label>
-                                <input type="text" name="clave" id="clave" class="form-control">
+                                <input type="text" name="clave" id="clave" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Nombre Completo</label>
-                                <input type="text" name="nombre_completo" id="nombre_completo" class="form-control">
+                                <input type="text" name="nombre_completo" id="nombre_completo" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Correo</label>
-                                <input type="text" name="correo" id="correo" class="form-control">
+                                <input type="email" name="correo" id="correo" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Link de hoja de vida</label>
-                                <input type="text" name="hoja_de_vida" id="hoja_de_vida" class="form-control">
+                                <input type="text" name="hoja_de_vida" id="hoja_de_vida" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Capacidad de actividades</label>
-                                <input type="text" name="capacidad" id="capacidad" class="form-control">
+                                <input type="number" min="0" step="1" max="500" name="capacidad" id="capacidad" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="Insertar">
@@ -200,8 +201,8 @@
                                 <td>
 
                                     <form action="delete_a.php" method="POST">
-                                        <input type="text" value=<?=$fila['nombre_usuario'];?> hidden>
-                                        <input type="text" name="d" value=<?=$fila['nombre_usuario'];?> hidden>
+                                        <input type="text" value='<?=$fila['nombre_usuario'];?>' hidden>
+                                        <input type="text" name="d" value='<?=$fila['nombre_usuario'];?>' hidden>
                                         <button class="btn btn-danger" title="eliminar" type="submit"><i
                                                 class="fas fa-trash-alt"></i></button>
                                     </form>
@@ -209,13 +210,13 @@
                                 <td class="mx-0 pr-2">
                                     <form action="administrador.php" method="GET">
 
-                                        <input type="text" name="nombre_usuario" value=<?=$fila['nombre_usuario'];?> hidden>
+                                        <input type="text" name="nombre_usuario" value='<?=$fila['nombre_usuario'];?>' hidden>
                                         <input type="text" name="clave" value='<?=$fila['clave'];?>' hidden>
                                         <input type="text" name="nombre_completo" value='<?=$fila['nombre_completo'];?>' hidden>
 
                                         <input type="text" name="correo" value='<?=$fila['correo'];?>' hidden>
-                                        <input type="text" name="hoja_de_vida" value=<?=$fila['hoja_de_vida'];?> hidden>
-                                        <input type="text" name="capacidad" value=<?=$fila['capacidad'];?> hidden>
+                                        <input type="text" name="hoja_de_vida" value='<?=$fila['hoja_de_vida'];?>' hidden>
+                                        <input type="text" name="capacidad" value='<?=$fila['capacidad'];?>' hidden>
 
                                         <button class="btn btn-primary" title="editar" type="submit"><i
                                                 class="far fa-edit"></i></button>
