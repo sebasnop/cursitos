@@ -67,7 +67,8 @@
         </header>
 
         <div class="container my-3 mx-5">
-            <div class="row">
+            <h1>Administrador</h1>
+            <div class="row mt-4">
                 <?php
                     if(isset($_GET["nombre_usuario"])){
                 ?>
