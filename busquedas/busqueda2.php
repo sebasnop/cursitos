@@ -66,6 +66,10 @@
 
                         if($n1 != 0){
 
+                            // Si se buscan solo los que SI administran cursos ($n1 != 0)
+                            // se realiza un conteo de cursos por administrador
+                            // y se seleccionan los que resulten en el rango [n1,n2]
+
                             $query="SELECT nombre_usuario, nombre_completo 
                                             FROM administrador 
                                             WHERE nombre_usuario IN (
@@ -77,6 +81,11 @@
                                              )";
 
                         } else {
+
+                            // Si se buscan también los que NO administran cursos ($n1 = 0)
+                            // se realiza la búsqueda anterior, pero se le agrega que
+                            // también se seleccionen aquellos administradores que no están
+                            // en la lista de los que han administrado cursos
 
                             $query="SELECT nombre_usuario, nombre_completo 
                                             FROM administrador 
