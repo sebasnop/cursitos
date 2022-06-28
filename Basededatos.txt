@@ -66,9 +66,8 @@ INSERT INTO curso VALUES (2, 'php2', 'web', 'php intermedio', 350, DATE('2022-03
 INSERT INTO curso VALUES (3, 'php3', 'web', 'php avanzado', 10, DATE('2022-04-02'), 'SINCRONICO', 'profe4', 'admin5', 60, DATE('2023-01-01'), NULL);
 INSERT INTO curso VALUES (4, 'html', 'web', 'principios html', 10, DATE('2022-04-02'), 'ASINCRONICO', 'profe3', 'admin6', NULL, NULL, 5);
 INSERT INTO curso VALUES (5, 'html2', 'web', 'html básico', 6, DATE('2022-03-02'), 'ASINCRONICO', 'profe1', 'admin5', NULL, NULL, 6);
-INSERT INTO curso VALUES (6, 'html3', 'web', 'html intermedio', 350, DATE('2022-05-02'), 'ASINCRONICO', 'profe2', 'admin7', NULL, NULL, 7);
+INSERT INTO curso VALUES (6, 'html3', 'web', 'html intermedio', 350, DATE('2022-05-02'), 'ASINCRONICO', 'profe2', 'admin3', NULL, NULL, 7);
 INSERT INTO curso VALUES (7, 'html4', 'web', 'html avanzado', 350, DATE('2022-05-02'), 'ASINCRONICO', 'profe2', 'admin1', NULL, NULL, 14);
-
 INSERT INTO curso VALUES (8, 'inglés', 'idiomas', 'curso de inglés básico', 300, DATE('2022-02-02'), 'ASINCRONICO', 'profe4', 'admin1', NULL, NULL, 100);
 
 
